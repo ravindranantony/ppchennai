@@ -46,7 +46,9 @@ Enrolling in Pepper Programming promises to be a transformative experience, equi
 How to Enroll and Start Learning : https://pp-self.vercel.app/enrol.html
 
 We will give you Git Access to our PP GitHub Repo
+
 Join the WhatsApp Group
+
 Download VSCode
 Join Trello.com PP Project Trello Agile Project
 Install Git from https://git-scm.com/downloads Start Learning Git Basics
