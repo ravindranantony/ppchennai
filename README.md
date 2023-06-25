@@ -50,8 +50,11 @@ We will give you Git Access to our PP GitHub Repo
 Join the WhatsApp Group
 
 Download VSCode
+
 Join Trello.com PP Project Trello Agile Project
+
 Install Git from https://git-scm.com/downloads Start Learning Git Basics
+
 Clone the Project into VSCode - Goto VS Code and Use the Git Repo URL https://github.com/ravindranantony/PP.git
 Ask a Mentor how to do it: Setup your workspace area table - Photo - Resume - Cover letter - Workspace file
 Create an Account in Open AI Chat and Use ChatGPT to create your cover letter
