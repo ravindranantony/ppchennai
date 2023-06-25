@@ -56,25 +56,41 @@ Join Trello.com PP Project Trello Agile Project
 Install Git from https://git-scm.com/downloads Start Learning Git Basics
 
 Clone the Project into VSCode - Goto VS Code and Use the Git Repo URL https://github.com/ravindranantony/PP.git
+
 Ask a Mentor how to do it: Setup your workspace area table - Photo - Resume - Cover letter - Workspace file
+
 Create an Account in Open AI Chat and Use ChatGPT to create your cover letter
+
 Capture Professional Photo and Upload in LinkedIn (Use Intern at Pepper Programming as a Company in LinkedIn, if you are not working now
-Install 200 OK Extension from Chrom 200 OK
-Open 200 OK and point the PP folder that you have cloned and check your web server is working at http://127.0.0.1:8887
-Install 200 OK Extension from Chrom 200 OK
+
+Use a PWS - Personal Web Server and learn to check your applications in Localhost
+
 Start parellel task Digital Marketing 40 hours digital marketing free certification
+
 Create your branch in VS Code and Push your first change to the Git Main Repo - Your Profile Table with Resume Cover letter
+
 Task 0: Create a Wordpress blog and add 3 blog articles (Follow Trello Task, 3 Images from Bing AI Image Generator should be added
+
 Task 1: Create your task html file and add your Task 1 HTML Calculator and send PR (you can use ChatGPT for code help)
+
 Task 2: Create Fibbanocchi Series HTML Javascript Code and See how it works
+
 Task 3: Create Tic Tac Toe Game using Javascript HTML CSS and use ChatGPT for Code Reference
+
 Task 4: Create a Website using Canva and Publish It, could be your profile or any sample website
+
 Task 5: Create Google Analycis account and add the code into your Wordpress Blog
+
 Task 6: Join and Collabare in a Figma Design Project
+
 Task 7: Create a Collabarative Software Requirement Specification Document for a Client
+
 Task 8: Create your own github project and collabarate with others to update the project
+
 Task 9: Create firecracker CSS Animaton (you must commit it with your git issue ID)
+
 Task 10: Create A 2024 NEW YEAR countdown landing page and add animations such as firecrakers
+
 Task 11: AI Based Travel Application using Altogic Backend, and Open AI Turbo API connected via React, VSCode used. 
 
 #Final Assessment : Resume, Coverletter, LinkedIn and Prepare for the Internship Interview 
