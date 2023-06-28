@@ -73,7 +73,7 @@ Task 0: Create a Wordpress blog and add 3 blog articles (Follow Trello Task, 3 I
 
 Task 1: Create your task html file and add your Task 1 HTML Calculator and send PR (you can use ChatGPT for code help)
 
-Task 2: Create Fibbanocchi Series HTML Javascript Code and See how it works
+Task 2: Create Fibonacci Series HTML Javascript Code and See how it works
 
 Task 3: Create Tic Tac Toe Game using Javascript HTML CSS and use ChatGPT for Code Reference
 
