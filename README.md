@@ -43,7 +43,7 @@ Networking and Collaboration: Pepper Programming fosters a collaborative learnin
 
 Enrolling in Pepper Programming promises to be a transformative experience, equipping participants with the skills to leverage no-code platforms and embark on a rewarding software engineering journey. Whether in Stockholm or online, this course opens doors to a world of possibilities in software development without the need for traditional coding skills.
 
-How to Enroll and Start Learning : https://pp-self.vercel.app/enrol.html
+How to Enroll and Start Learning: https://pp-self.vercel.app/enrol.html
 
 We will give you Git Access to our PP GitHub Repo
 
@@ -65,7 +65,7 @@ Capture Professional Photo and Upload in LinkedIn (Use Intern at Pepper Programm
 
 Use a PWS - Personal Web Server and learn to check your applications in Localhost
 
-Start parellel task Digital Marketing 40 hours digital marketing free certification
+Start parallel task Digital Marketing 40 hours digital marketing free certification
 
 Create your branch in VS Code and Push your first change to the Git Main Repo - Your Profile Table with Resume Cover letter
 
@@ -79,18 +79,18 @@ Task 3: Create Tic Tac Toe Game using Javascript HTML CSS and use ChatGPT for Co
 
 Task 4: Create a Website using Canva and Publish It, could be your profile or any sample website
 
-Task 5: Create Google Analycis account and add the code into your Wordpress Blog
+Task 5: Create Google Analytics account and add the code into your Wordpress Blog
 
 Task 6: Join and Collabare in a Figma Design Project
 
-Task 7: Create a Collabarative Software Requirement Specification Document for a Client
+Task 7: Create a Collaborative Software Requirement Specification Document for a Client
 
-Task 8: Create your own github project and collabarate with others to update the project
+Task 8: Create your own github project and collaborate with others to update the project
 
-Task 9: Create firecracker CSS Animaton (you must commit it with your git issue ID)
+Task 9: Create firecracker CSS Animation (you must commit it with your git issue ID)
 
-Task 10: Create A 2024 NEW YEAR countdown landing page and add animations such as firecrakers
+Task 10: Create A 2024 NEW YEAR countdown landing page and add animations such as firecrackers
 
 Task 11: AI Based Travel Application using Altogic Backend, and Open AI Turbo API connected via React, VSCode used. 
 
-#Final Assessment : Resume, Coverletter, LinkedIn and Prepare for the Internship Interview 
+#Final Assessment: Resume, Coverletter, LinkedIn and Prepare for the Internship Interview 
