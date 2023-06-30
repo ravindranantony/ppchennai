@@ -1,28 +1,265 @@
 <!DOCTYPE html>
 <html>
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
+<head>
+  <title>CSV File Display</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
 <body>
-
-<h2>PP Chennai Students</h2>
-
-<table style="width:100%">
-  <tr>
-    <th>Student ID</th>
-    <th>Student Name</th>
-  </tr>
-  <tr>
-    <td>PPE1212</td>
-    <td>Divya Sethupathi</td>
-  </tr>
-  <tr>
-    <td>PP23423434</td>
-    <td>Sahana</td>
-  </tr>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>S.No</th>
+        <th>Student Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>LinkedIn URL</th>
+        <th>Phone</th>
+        <th>WhatsApp</th>
+        <th>Instagram</th>
+        <th>Twitter</th>
+        <th>Resume</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>1</td>
+        <td>PPCHE08</td>
+        <td>Lakshmi Karthik</td>
+        <td>kklakshmi.08@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/lakshmi-karthik-813192216">https://www.linkedin.com/in/lakshmi-karthik-813192216</a></td>
+        <td>7200266088</td>
+        <td>7200266088</td>
+        <td><a href="https://instagram.com/tamilmixer1?igshid=ZGUzMzM3NWJiOQ==">https://instagram.com/tamilmixer1?igshid=ZGUzMzM3NWJiOQ==</a></td>
+        <td><a href="https://twitter.com/Tanjiro_Raj">https://twitter.com/Tanjiro_Raj</a></td>
+        <td><a href="https://drive.google.com/drive/folders/1d9BUPfgeGmuZ0aQr_22wgkeNiS1OeShr">https://drive.google.com/drive/folders/1d9BUPfgeGmuZ0aQr_22wgkeNiS1OeShr</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>2</td>
+        <td>PPCHE13</td>
+        <td>RAJKUMAR K</td>
+        <td>vkrajkumar1996@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/rajkumar-k-511899196/">https://www.linkedin.com/in/rajkumar-k-511899196/</a></td>
+        <td>9840664272</td>
+        <td>9840664272</td>
+        <td><a href="https://instagram.com/kklakshmi.08?igshid=NGExMmI2YTkyZg==">https://instagram.com/kklakshmi.08?igshid=NGExMmI2YTkyZg==</a></td>
+        <td><a href="https://twitter.com/sanash810?t=K5NHofYyPkk19Kh-vN8nBQ&s=08">https://twitter.com/sanash810?t=K5NHofYyPkk19Kh-vN8nBQ&s=08</a></td>
+        <td><a href="https://drive.google.com/drive/folders/1YSIrZYzHlC0rdOhP5kjsAmB3nFhcCi74">https://drive.google.com/drive/folders/1YSIrZYzHlC0rdOhP5kjsAmB3nFhcCi74</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>3</td>
+        <td>PPCHE16</td>
+        <td>Sri sangavi S M</td>
+        <td>sangavi252000@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/ammu-ammu-02b022259?trk=contact-info">https://www.linkedin.com/in/ammu-ammu-02b022259?trk=contact-info</a></td>
+        <td>9894366440</td>
+        <td>9894366440</td>
+        <td><a href="https://www.secure.instagram.com/sangavisakthiey/">https://www.secure.instagram.com/sangavisakthiey/</a></td>
+        <td><a href="https://twitter.com/sangavisakthie">https://twitter.com/sangavisakthie</a></td>
+        <td><a href="https://drive.google.com/file/d/1d3qujkfhiRJf0hOUy4GmtgHkpoIyTJlh/view?usp=drivesdk">https://drive.google.com/file/d/1d3qujkfhiRJf0hOUy4GmtgHkpoIyTJlh/view?usp=drivesdk</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>4</td>
+        <td>PPCHE04</td>
+        <td>Dhivya Sethupathi</td>
+        <td>dhivyakect@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/dhivya-sethupathi-8a3422b1/">https://www.linkedin.com/in/dhivya-sethupathi-8a3422b1/</a></td>
+        <td>8903062099</td>
+        <td>8903062099</td>
+        <td><a href="https://www.instagram.com/dhivyaruthu/">https://www.instagram.com/dhivyaruthu/</a></td>
+        <td><a href="https://twitter.com/DhivyaSethu">https://twitter.com/DhivyaSethu</a></td>
+        <td><a href="https://drive.google.com/drive/folders/1s19VBmzFMQ6OxJiGRj_RNum2I6eP6o9j">https://drive.google.com/drive/folders/1s19VBmzFMQ6OxJiGRj_RNum2I6eP6o9j</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>5</td>
+        <td>PPCHE10</td>
+        <td>Murali Selvam V</td>
+        <td>muraliviswanath66@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/murali-viswanath-1a80a0281">https://www.linkedin.com/in/murali-viswanath-1a80a0281</a></td>
+        <td>6381617474</td>
+        <td>6381617474</td>
+        <td><a href="https://instagram.com/muraleeeeeee?igshid=OTk0YzhjMDVlZA==">https://instagram.com/muraleeeeeee?igshid=OTk0YzhjMDVlZA==</a></td>
+        <td><a href="https://twitter.com/drunken_monk66?t=OWoSjoEe2687Ol0LVdp61g&s=09">https://twitter.com/drunken_monk66?t=OWoSjoEe2687Ol0LVdp61g&s=09</a></td>
+        <td><a href="https://drive.google.com/file/d/186m3LymrhckUdekZToVxwpMuXn0qOWkT/view?usp=drivesdk">https://drive.google.com/file/d/186m3LymrhckUdekZToVxwpMuXn0qOWkT/view?usp=drivesdk</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>6</td>
+        <td>PPCHE01</td>
+        <td>Ananth S</td>
+        <td>sananth600@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/ananth-s-0a41491a3">https://www.linkedin.com/in/ananth-s-0a41491a3</a></td>
+        <td>919636943293</td>
+        <td>919626943293</td>
+        <td><a href="https://www.instagram.com/ananth_0308/">https://www.instagram.com/ananth_0308/</a></td>
+        <td><a href="https://twitter.com/ananth_1508?t=r52mQ6OnTqSofMzLG2RV9w&s=09">https://twitter.com/ananth_1508?t=r52mQ6OnTqSofMzLG2RV9w&s=09</a></td>
+        <td><a href="https://drive.google.com/drive/folders/1sKVSQuNWV597ZEKow2rnY9RysOUFwMoT">https://drive.google.com/drive/folders/1sKVSQuNWV597ZEKow2rnY9RysOUFwMoT</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>7</td>
+        <td>PPCHE05</td>
+        <td>Divya R</td>
+        <td>divyasureshbe@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/divya-ramamoorthy-080b11280">https://www.linkedin.com/in/divya-ramamoorthy-080b11280</a></td>
+        <td>9751934544</td>
+        <td>9751934544</td>
+        <td><a href="https://www.instagram.com/divyaramamoorthy6/">https://www.instagram.com/divyaramamoorthy6/</a></td>
+        <td><a href="https://twitter.com/divyasureshbe?t=_Md6B8pjOp6s7Gexq54b-w&s=08">https://twitter.com/divyasureshbe?t=_Md6B8pjOp6s7Gexq54b-w&s=08</a></td>
+        <td><a href="https://drive.google.com/drive/folders/18kcz0OPL5lPh5sdxL1_wJinXeTjYtpoF?usp=drive_link">https://drive.google.com/drive/folders/18kcz0OPL5lPh5sdxL1_wJinXeTjYtpoF?usp=drive_link</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>8</td>
+        <td>PPCHE15</td>
+        <td>Shahid Afridi M</td>
+        <td>msafridi700@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/shahid-afridi-m-ba119b194">https://www.linkedin.com/in/shahid-afridi-m-ba119b194</a></td>
+        <td>8825826979</td>
+        <td>8825826979</td>
+        <td><a href="https://instagram.com/msafridi6007?igshid=NGExMmI2YTkyZg==">https://instagram.com/msafridi6007?igshid=NGExMmI2YTkyZg==</a></td>
+        <td><a href="https://twitter.com/ShahidAfridiM?t=rRMLGLfLQRo90cirDnEgjQ&s=09">https://twitter.com/ShahidAfridiM?t=rRMLGLfLQRo90cirDnEgjQ&s=09</a></td>
+        <td><a href="https://drive.google.com/file/d/1G4zZQlvuueU5Il68rcHjRbpULx9OOJKh/view?usp=drive_link">https://drive.google.com/file/d/1G4zZQlvuueU5Il68rcHjRbpULx9OOJKh/view?usp=drive_link</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>9</td>
+        <td>PPCHE02</td>
+        <td>Arthi Sivakumar</td>
+        <td>arthisivakumar19@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/arthi-sivakumar19">(LinkedIn profile)</a></td>
+        <td>(+31)681137783</td>
+        <td>(+31)681137783</td>
+        <td><a href="https://www.instagram.com/arthisivakumar19/?igshid=MzNlNGNkZWQ4Mg%3D%3D">https://www.instagram.com/arthisivakumar19/?igshid=MzNlNGNkZWQ4Mg%3D%3D</a></td>
+        <td><a href="https://twitter.com/Aarthi13515468?t=0eAds6JxuPzp8v2Cu0ZOgw&s=08">https://twitter.com/Aarthi13515468?t=0eAds6JxuPzp8v2Cu0ZOgw&s=08</a></td>
+        <td><a href="https://drive.google.com/drive/folders/1gCD7KNL6lMPhw3F2SaCa2oBVa5ZcAhiR">https://drive.google.com/drive/folders/1gCD7KNL6lMPhw3F2SaCa2oBVa5ZcAhiR</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>10</td>
+        <td>PPCHE07</td>
+        <td>Jumana Hasin.S</td>
+        <td>jumanahasin1521@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/jumana-hasin-95b3b7236">https://www.linkedin.com/in/jumana-hasin-95b3b7236</a></td>
+        <td>8015470842</td>
+        <td>8015470842</td>
+        <td><a href="https://www.instagram.com/invites/contact/?i=19jbkh50m417y&utm_content=jh857nt">https://www.instagram.com/invites/contact/?i=19jbkh50m417y&utm_content=jh857nt</a></td>
+        <td><a href="https://twitter.com/JT5504325443301?t=O1RWhIvlKwdt-PQ8v-35mg&s=09">https://twitter.com/JT5504325443301?t=O1RWhIvlKwdt-PQ8v-35mg&s=09</a></td>
+        <td><a href="https://drive.google.com/drive/folders/1uklKtkyAL1A249-vZNAapJQsRCAXGTs-">https://drive.google.com/drive/folders/1uklKtkyAL1A249-vZNAapJQsRCAXGTs-</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>11</td>
+        <td>PPCHE14</td>
+        <td>Sarmathi k</td>
+        <td>sarmathi1906@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/sarmathi-k-a556a2189">https://www.linkedin.com/in/sarmathi-k-a556a2189</a></td>
+        <td>9500397028</td>
+        <td>9500397028</td>
+        <td><a href="https://instagram.com/sarmathi697?igshid=NGExMmI2YTkyZg==">https://instagram.com/sarmathi697?igshid=NGExMmI2YTkyZg==</a></td>
+        <td><a href="https://twitter.com/Sarmathik83997?t=L7VUuldFr-VM5muecOkang&s=08">https://twitter.com/Sarmathik83997?t=L7VUuldFr-VM5muecOkang&s=08</a></td>
+        <td><a href="https://drive.google.com/drive/folders/1nSt0VPDzoIqSGiSfW564G6PvA6N3qo58?usp=drive_link">https://drive.google.com/drive/folders/1nSt0VPDzoIqSGiSfW564G6PvA6N3qo58?usp=drive_link</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>12</td>
+        <td>PPCHE09</td>
+        <td>M.Devi</td>
+        <td>devi6060@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/devi-amirthalingam-596a0b19a">(LinkedIn profile)</a></td>
+        <td>9884023320</td>
+        <td>9884023320</td>
+        <td><a href="https://www.instagram.com/deviamirthalingam2/">https://www.instagram.com/deviamirthalingam2/</a></td>
+        <td><a href="https://twitter.com/DAmirthalngam">https://twitter.com/DAmirthalngam</a></td>
+        <td><a href="https://drive.google.com/drive/folders/1NSXh3dDLw6S2tfKIXiYB4AT9tVRGZI30">https://drive.google.com/drive/folders/1NSXh3dDLw6S2tfKIXiYB4AT9tVRGZI30</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>13</td>
+        <td>PPCHE11</td>
+        <td>Neeja S</td>
+        <td>neejaviju22@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/neeja-v-57bb0b280?trk=contact-info">https://www.linkedin.com/in/neeja-v-57bb0b280?trk=contact-info</a></td>
+        <td>916380331792</td>
+        <td>916380331792</td>
+        <td><a href="https://www.instagram.com/neejaviju">https://www.instagram.com/neejaviju</a></td>
+        <td><a href="https://twitter.com/Hinata_Neeju?t=XyRN903C_d37jlyGZ-wVQw&s=08">https://twitter.com/Hinata_Neeju?t=XyRN903C_d37jlyGZ-wVQw&s=08</a></td>
+        <td><a href="https://drive.google.com/file/d/1E-JfML48yKzniW9PkYmOOGh-RC2NRNg3/view?usp=drive_link">https://drive.google.com/file/d/1E-JfML48yKzniW9PkYmOOGh-RC2NRNg3/view?usp=drive_link</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>14</td>
+        <td>PPCHE06</td>
+        <td>Janani V S</td>
+        <td>jananivs7@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/vs-janani-768b051a9">https://www.linkedin.com/in/vs-janani-768b051a9</a></td>
+        <td>6374093774</td>
+        <td>6374093774</td>
+        <td><a href="https://instagram.com/_._partner_?igshid=MzNlNGNkZWQ4Mg==">https://instagram.com/_._partner_?igshid=MzNlNGNkZWQ4Mg==</a></td>
+        <td><a href="https://twitter.com/Janani_v_s">https://twitter.com/Janani_v_s</a></td>
+        <td><a href="https://drive.google.com/file/d/17u675fBgGL9imZCkzTX9tm1U_LoDqt0a/view?usp=drivesdk">https://drive.google.com/file/d/17u675fBgGL9imZCkzTX9tm1U_LoDqt0a/view?usp=drivesdk</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>15</td>
+        <td>PPCHE12</td>
+        <td>Priyanka S</td>
+        <td>priyapriyanka1105@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/priyanka-s-898860231">https://www.linkedin.com/in/priyanka-s-898860231</a></td>
+        <td>8056357747</td>
+        <td>8056357747</td>
+        <td><a href="https://www.instagram.com/priyapriyanka1105/?igshid=NGExMmI2YTkyZg%3D%3D">https://www.instagram.com/priyapriyanka1105/?igshid=NGExMmI2YTkyZg%3D%3D</a></td>
+        <td><a href="https://twitter.com/PriyankaS91445?t=VAR1oUVaxULivSBM-WgDrA&s=08">https://twitter.com/PriyankaS91445?t=VAR1oUVaxULivSBM-WgDrA&s=08</a></td>
+        <td><a href="https://drive.google.com/file/d/1jEsF1cDKbtWtpajY4lZn6jQwBq53hw3P/view?usp=drivesdk">https://drive.google.com/file/d/1jEsF1cDKbtWtpajY4lZn6jQwBq53hw3P/view?usp=drivesdk</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>16</td>
+        <td>PPCHE03</td>
+        <td>Arun Pandian M</td>
+        <td>arunapril1994@gmail.com</td>
+        <td><a href="https://www.linkedin.com/in/arun-pandian-544519273">https://www.linkedin.com/in/arun-pandian-544519273</a></td>
+        <td>8344776735</td>
+        <td>8344776735</td>
+        <td><a href="https://instagram.com/arun_saraswathi?igshid=MzNlNGNkZWQ4Mg==">https://instagram.com/arun_saraswathi?igshid=MzNlNGNkZWQ4Mg==</a></td>
+        <td><a href="https://twitter.com/ArunPan14367298?t=6wDB8UzFbZ61Jrrzyw8Cgg&s=09">https://twitter.com/ArunPan14367298?t=6wDB8UzFbZ61Jrrzyw8Cgg&s=09</a></td>
+        <td><a href="https://in.docworkspace.com/d/sIKrMl5Z917zrpAY?sa=e1&st=0t">https://in.docworkspace.com/d/sIKrMl5Z917zrpAY?sa=e1&st=0t</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </body>
-</html>
 
+</html>
