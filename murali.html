@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
+    <title>Dancing Minion Animation</title>
+    <style>
+        #minion {
+            width: 200px;
+            position: relative;
+            top: 200px;
+            left: 200px;
+            animation: dance 2s infinite;
+            transform-origin: bottom center;
+        }
+
+        @keyframes dance {
+            0% { transform: rotate(0deg); }
+            20% { transform: rotate(20deg); }
+            40% { transform: rotate(0deg); }
+            60% { transform: rotate(-20deg); }
+            80% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+    </style>
 </head>
 <body>
-
-    <p><i>Lorem ipsum dolor sit, amet consectetur</i> adipisicing elit. Deleniti reiciendis sapiente quo tenetur architecto quidem totam inventore in eveniet dolor ratione nihil provident <strong>voluptatibus eaque</strong>, incidunt perferendis eius ea quas, quis facilis minima quasi! Earum, enim sunt nostrum pariatur assumenda blanditiis vero similique <strong>ullam est laborum corrupti</strong> modi soluta ducimus?</p>
-    
+    <img id="minion" src="https://i.imgur.com/SvXKRpA.png" alt="Minion" />
 </body>
 </html>
+
