@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            MUrali
-        </title>
-    </head>
-    <body>
-        <p>Welcome to<strong>Pepper Programming</strong></p>
-    </body>
+<head>
+    <title>Dancing Minion Animation</title>
+    <style>
+        #minion {
+            width: 200px;
+            position: relative;
+            top: 200px;
+            left: 200px;
+            animation: dance 2s infinite;
+            transform-origin: bottom center;
+        }
+
+        @keyframes dance {
+            0% { transform: rotate(0deg); }
+            20% { transform: rotate(20deg); }
+            40% { transform: rotate(0deg); }
+            60% { transform: rotate(-20deg); }
+            80% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+    </style>
+</head>
+<body>
+    <img id="minion" src="https://i.imgur.com/SvXKRpA.png" alt="Minion" />
+</body>
 </html>
+
