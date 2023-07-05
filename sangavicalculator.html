@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scientific Calculator</title>
+    <style>
+      .container {
+        width: 300px;
+        margin: 0 auto;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+      input[type="button"] {
+        width: 50%;
+        padding: 10px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="result" disabled />
+      <input type="button" value="1" onclick="appendNumber(1)" />
+      <input type="button" value="2" onclick="appendNumber(2)" />
+      <input type="button" value="3" onclick="appendNumber(3)" />
+      <input type="button" value="+" onclick="appendOperator('+')" />
+      <br />
+      <input type="button" value="4" onclick="appendNumber(4)" />
+      <input type="button" value="5" onclick="appendNumber(5)" />
+      <input type="button" value="6" onclick="appendNumber(6)" />
+      <input type="button" value="-" onclick="appendOperator('-')" />
+      <br />
+      <input type="button" value="7" onclick="appendNumber(7)" />
+      <input type="button" value="8" onclick="appendNumber(8)" />
+      <input type="button" value="9" onclick="appendNumber(9)" />
+      <input type="button" value="*" onclick="appendOperator('*')" />
+      <br />
+      <input type="button" value="0" onclick="appendNumber(0)" />
+      <input type="button" value="." onclick="appendNumber('.')" />
+      <input type="button" value="=" onclick="calculate()" />
+      <input type="button" value="/" onclick="appendOperator('/')" />
+      <br />
+      <input type="button" value="sin" onclick="calculateTrig('sin')" />
+      <input type="button" value="cos" onclick="calculateTrig('cos')" />
+      <input type="button" value="tan" onclick="calculateTrig('tan')" />
+      <input type="button" value="sqrt" onclick="calculateSqrt()" />
+      <br />
+      <input type="button" value="log" onclick="calculateLog()" />
+      <input type="button" value="exp" onclick="calculateExp()" />
+      <input type="button" value="clear" onclick="clearResult()" />
+    </div>
+
+    <script>
+      function appendNumber(number) {
+        document.getElementById("result").value += number;
+      }
+
+      function appendOperator(operator) {
+        document.getElementById("result").value += operator;
+      }
+
+      function calculate() {
+        try {
+          const expression = document.getElementById("result").value;
+          const result = eval(expression);
+          document.getElementById("result").value = result;
+        } catch (error) {
+          document.getElementById("result").value = "Error";
+        }
+      }
+
+      function calculateTrig(trigFunction) {
+        const angle = document.getElementById("result").value;
+        let result;
+        switch (trigFunction) {
+          case "sin":
+            result = Math.sin(angle);
+            break;
+          case "cos":
+            result = Math.cos(angle);
+            break;
+          case "tan":
+            result = Math.tan(angle);
+            break;
+        }
+        document.getElementById("result").value = result;
+      }
+
+      function calculateSqrt() {
+        const number = document.getElementById("result").value;
+        const result = Math.sqrt(number);
+        document.getElementById("result").value = result;
+      }
+
+      function calculateLog() {
+        const number = document.getElementById("result").value;
+        const result = Math.log10(number);
+        document.getElementById("result").value = result;
+      }
+
+      function calculateExp() {
+        const exponent = document.getElementById("result").value;
+        const result = Math.exp(exponent);
+        document.getElementById("result").value = result;
+      }
+
+      function clearResult() {
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </body>
+</html>
