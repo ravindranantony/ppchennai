@@ -1,54 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calculator</title>
-    <style>
-        #calculator {
-            width: 200px;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        input[type="button"] {
-            width: 100%;
-            margin-bottom: 5px;
-        }
-    </style>
+  <title>Scientific Calculator</title>
+  <script src="calculator.js"></script>
 </head>
 <body>
-    <div id="calculator">
-        <input type="text" id="display" readonly>
-        <input type="button" value="1" onclick="appendToDisplay('1')">
-        <input type="button" value="2" onclick="appendToDisplay('2')">
-        <input type="button" value="3" onclick="appendToDisplay('3')">
-        <input type="button" value="4" onclick="appendToDisplay('4')">
-        <input type="button" value="5" onclick="appendToDisplay('5')">
-        <input type="button" value="6" onclick="appendToDisplay('6')">
-        <input type="button" value="7" onclick="appendToDisplay('7')">
-        <input type="button" value="8" onclick="appendToDisplay('8')">
-        <input type="button" value="9" onclick="appendToDisplay('9')">
-        <input type="button" value="0" onclick="appendToDisplay('0')">
-        <input type="button" value="+" onclick="appendToDisplay('+')">
-        <input type="button" value="-" onclick="appendToDisplay('-')">
-        <input type="button" value="*" onclick="appendToDisplay('*')">
-        <input type="button" value="/" onclick="appendToDisplay('/')">
-        <input type="button" value="=" onclick="calculate()">
-        <input type="button" value="C" onclick="clearDisplay()">
-    </div>
-
-    <script>
-        function appendToDisplay(value) {
-            document.getElementById('display').value += value;
-        }
-
-        function calculate() {
-            var display = document.getElementById('display');
-            var result = eval(display.value);
-            display.value = result;
-        }
-
-        function clearDisplay() {
-            document.getElementById('display').value = '';
-        }
-    </script>
+  <h1>Scientific Calculator</h1>
+  
+  <input type="text" id="expression" placeholder="Enter an expression">
+  <br>
+  <input type="text" id="result" placeholder="Result" readonly>
+  <br>
+  
+  <button onclick="evaluateExpression()">Evaluate</button>
+  <button onclick="clearFields()">Clear</button>
+  
+  <br>
+  <button onclick="appendValue('1')">1</button>
+  <button onclick="appendValue('2')">2</button>
+  <button onclick="appendValue('3')">3</button>
+  <button onclick="appendValue('+')">+</button>
+  <br>
+  <button onclick="appendValue('4')">4</button>
+  <button onclick="appendValue('5')">5</button>
+  <button onclick="appendValue('6')">6</button>
+  <button onclick="appendValue('-')">-</button>
+  <br>
+  <button onclick="appendValue('7')">7</button>
+  <button onclick="appendValue('8')">8</button>
+  <button onclick="appendValue('9')">9</button>
+  <button onclick="appendValue('*')">*</button>
+  <br>
+  <button onclick="appendValue('0')">0</button>
+  <button onclick="appendValue('.')">.</button>
+  <button onclick="appendValue('/')">/</button>
+  <button onclick="appendValue('^')">^</button>
+  
 </body>
 </html>
