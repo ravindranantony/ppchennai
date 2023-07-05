@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scientific Calculator</title>
+  <style>
+    .calculator {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 5px;
+      max-width: 200px;
+      margin: 0 auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .button {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    #display {
+      grid-column: 1 / span 4;
+      padding: 10px;
+      font-size: 20px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="display" readonly>
+
+    <button class="button" value="7">7</button>
+    <button class="button" value="8">8</button>
+    <button class="button" value="9">9</button>
+    <button class="button" value="/">/</button>
+
+    <button class="button" value="4">4</button>
+    <button class="button" value="5">5</button>
+    <button class="button" value="6">6</button>
+    <button class="button" value="*">*</button>
+
+    <button class="button" value="1">1</button>
+    <button class="button" value="2">2</button>
+    <button class="button" value="3">3</button>
+    <button class="button" value="-">-</button>
+
+    <button class="button" value="0">0</button>
+    <button class="button" value=".">.</button>
+    <button class="button" value="C">C</button>
+    <button class="button" value="+">+</button>
+
+    <button class="button" value="(">(</button>
+    <button class="button" value=")">)</button>
+    <button class="button" value="=">=</button>
+    <button class="button" value="Math.sqrt()">√</button>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
