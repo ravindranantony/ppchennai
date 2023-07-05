@@ -1,11 +1,113 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Lakshmi K
-        </title>
-    </head>
-    <body>
-        <p>Welcome to<strong>Pepper Programming</strong></p>
-    </body>
+<head>
+  <title>Ping Pong Game</title>
+  <style>
+    /* CSS */
+    canvas {
+      display: block;
+      margin: 0 auto;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+  <script>
+    // JavaScript
+    const canvas = document.getElementById("gameCanvas");
+    const context = canvas.getContext("2d");
+
+    // Paddle properties
+    const paddleWidth = 10;
+    const paddleHeight = 80;
+    let paddle1Y = (canvas.height - paddleHeight) / 2;
+    let paddle2Y = (canvas.height - paddleHeight) / 2;
+
+    // Ball properties
+    const ballSize = 10;
+    let ballX = canvas.width / 2;
+    let ballY = canvas.height / 2;
+    let ballSpeedX = -3;
+    let ballSpeedY = -3;
+
+    function drawRect(x, y, width, height, color) {
+      context.fillStyle = color;
+      context.fillRect(x, y, width, height);
+    }
+
+    function drawCircle(x, y, radius, color) {
+      context.fillStyle = color;
+      context.beginPath();
+      context.arc(x, y, radius, 0, Math.PI * 2, false);
+      context.closePath();
+      context.fill();
+    }
+
+    function drawNet() {
+      for (let i = 0; i < canvas.height; i += 40) {
+        drawRect(canvas.width / 2 - 1, i, 2, 20, "#FFF");
+      }
+    }
+
+    function draw() {
+      // Clear canvas
+      drawRect(0, 0, canvas.width, canvas.height, "#000");
+
+      // Draw net
+      drawNet();
+
+      // Draw paddles
+      drawRect(0, paddle1Y, paddleWidth, paddleHeight, "#FFF");
+      drawRect(canvas.width - paddleWidth, paddle2Y, paddleWidth, paddleHeight, "#FFF");
+
+      // Draw ball
+      drawCircle(ballX, ballY, ballSize, "#FFF");
+    }
+
+    function movePaddle(event) {
+      const rect = canvas.getBoundingClientRect();
+      const mouseY = event.clientY - rect.top - paddleHeight / 2;
+
+      if (mouseY >= 0 && mouseY <= canvas.height - paddleHeight) {
+        paddle1Y = mouseY;
+      }
+    }
+
+    function update() {
+      // Move the ball
+      ballX += ballSpeedX;
+      ballY += ballSpeedY;
+
+      // Collision detection with paddles
+      if (
+        ballX - ballSize <= paddleWidth &&
+        ballY + ballSize >= paddle1Y &&
+        ballY - ballSize <= paddle1Y + paddleHeight
+      ) {
+        ballSpeedX *= -1;
+      }
+      if (
+        ballX + ballSize >= canvas.width - paddleWidth &&
+        ballY + ballSize >= paddle2Y &&
+        ballY - ballSize <= paddle2Y + paddleHeight
+      ) {
+        ballSpeedX *= -1;
+      }
+
+      // Collision detection with walls
+      if (ballY - ballSize <= 0 || ballY + ballSize >= canvas.height) {
+        ballSpeedY *= -1;
+      }
+
+      // Update the canvas
+      draw();
+    }
+
+    canvas.addEventListener("mousemove", movePaddle);
+
+    setInterval(update, 1000 / 60); // 60 FPS
+  </script>
+</body>
 </html>
