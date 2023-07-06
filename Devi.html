@@ -6,4 +6,30 @@
  <body> 
  <p>welcome to  welcome to pepper programming <strong>bold.</strong></p> 
  </body>
-</html>
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title>Simple Calculator</title>
+     <link rel="stylesheet" type="text/css" href="style.css">
+ </head>
+ <body>
+     <div class="container">
+         <h1>Simple Calculator</h1>
+         <form>
+             <input type="text" id="num1" placeholder="Enter first number">
+             <select id="operator">
+                 <option value="+">+</option>
+                 <option value="-">-</option>
+                 <option value="*">*</option>
+                 <option value="/">/</option>
+             </select>
+             <input type="text" id="num2" placeholder="Enter second number">
+             <input type="button" value="Calculate" onclick="calculate()">
+         </form>
+         Result: <input type="text" id="result">
+     </div>
+ 
+     <script type="text/javascript" src="script.js"></script>
+ </body>
+ </html>
+ 
