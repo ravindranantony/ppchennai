@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    .calculator {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#result {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+button {
+  padding: 10px;
+  font-size: 18px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+    <div class="buttons">
+      <button onclick="appendNumber('7')">7</button>
+      <button onclick="appendNumber('8')">8</button>
+      <button onclick="appendNumber('9')">9</button>
+      <button onclick="appendOperator('+')">+</button>
+      <button onclick="appendNumber('4')">4</button>
+      <button onclick="appendNumber('5')">5</button>
+      <button onclick="appendNumber('6')">6</button>
+      <button onclick="appendOperator('-')">-</button>
+      <button onclick="appendNumber('1')">1</button>
+      <button onclick="appendNumber('2')">2</button>
+      <button onclick="appendNumber('3')">3</button>
+      <button onclick="appendOperator('*')">*</button>
+      <button onclick="appendNumber('0')">0</button>
+      <button onclick="appendOperator('/')">/</button>
+      <button onclick="clearResult()">C</button>
+      <button onclick="calculate()">=</button>
+    </div>
+  </div>
+  
+  <script>
+    function appendNumber(number) {
+  var result = document.getElementById("result");
+  result.value += number;
+}
+
+function appendOperator(operator) {
+  var result = document.getElementById("result");
+  result.value += operator;
+}
+
+function clearResult() {
+  var result = document.getElementById("result");
+  result.value = "";
+}
+
+function calculate() {
+  var result = document.getElementById("result");
+  var expression = result.value;
+
+  try {
+    var answer = eval(expression);
+    result.value = answer;
+  } catch (error) {
+    result.value = "Error";
+  }
+}
+
+  </script>
+</body>
+</html>
