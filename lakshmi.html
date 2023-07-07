@@ -1,83 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Simple Calculator</title>
+  <title>JavaScript Calculator</title>
   <style>
-    .container {
-      width: 300px;
-      margin: 0 auto;
-      padding: 20px;
+    /* CSS */
+    body {
       background-color: #f2f2f2;
-      border-radius: 5px;
+      font-family: Arial, sans-serif;
     }
-    .button {
-      width: 60px;
-      height: 60px;
-      margin: 5px;
-      font-size: 20px;
-      border-radius: 5px;
-      border: none;
+
+    .calculator {
+      width: 250px;
+      margin: 100px auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
     }
-    #result {
+
+    .calculator input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
       margin-bottom: 10px;
-      padding: 5px;
-      font-size: 24px;
+      padding: 10px;
+      font-size: 20px;
+    }
+
+    .calculator button {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      margin: 5px;
+      border-radius: 50%;
+      background-color: #ccc;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .calculator button:hover {
+      background-color: #e6e6e6;
+    }
+
+    .calculator .row {
+      display: flex;
+      justify-content: center;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div id="result"></div>
-    <button class="button" onclick="appendNumber('7')">7</button>
-    <button class="button" onclick="appendNumber('8')">8</button>
-    <button class="button" onclick="appendNumber('9')">9</button>
-    <button class="button" onclick="appendOperator('+')">+</button>
-    <br>
-    <button class="button" onclick="appendNumber('4')">4</button>
-    <button class="button" onclick="appendNumber('5')">5</button>
-    <button class="button" onclick="appendNumber('6')">6</button>
-    <button class="button" onclick="appendOperator('-')">-</button>
-    <br>
-    <button class="button" onclick="appendNumber('1')">1</button>
-    <button class="button" onclick="appendNumber('2')">2</button>
-    <button class="button" onclick="appendNumber('3')">3</button>
-    <button class="button" onclick="appendOperator('*')">*</button>
-    <br>
-    <button class="button" onclick="appendNumber('0')">0</button>
-    <button class="button" onclick="appendOperator('.')">.</button>
-    <button class="button" onclick="calculate()">=</button>
-    <button class="button" onclick="appendOperator('/')">/</button>
-    <br>
-    <button class="button" onclick="clearResult()">C</button>
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+
+    <div class="row">
+      <button onclick="clearResult()">C</button>
+      <button onclick="deleteCharacter()">&larr;</button>
+      <button onclick="appendCharacter('/')">/</button>
+      <button onclick="appendCharacter('')"></button>
+    </div>
+
+    <div class="row">
+      <button onclick="appendCharacter('7')">7</button>
+      <button onclick="appendCharacter('8')">8</button>
+      <button onclick="appendCharacter('9')">9</button>
+      <button onclick="appendCharacter('-')">-</button>
+    </div>
+
+    <div class="row">
+      <button onclick="appendCharacter('4')">4</button>
+      <button onclick="appendCharacter('5')">5</button>
+      <button onclick="appendCharacter('6')">6</button>
+      <button onclick="appendCharacter('+')">+</button>
+    </div>
+
+    <div class="row">
+      <button onclick="appendCharacter('1')">1</button>
+      <button onclick="appendCharacter('2')">2</button>
+      <button onclick="appendCharacter('3')">3</button>
+      <button onclick="calculateResult()">=</button>
+    </div>
+
+    <div class="row">
+      <button onclick="appendCharacter('0')">0</button>
+      <button onclick="appendCharacter('.')">.</button>
+    </div>
   </div>
 
   <script>
-    let currentExpression = '';
-
-    function appendNumber(number) {
-      currentExpression += number;
-      document.getElementById('result').textContent = currentExpression;
+    // JavaScript
+    function appendCharacter(char) {
+      const result = document.getElementById("result");
+      result.value += char;
     }
 
-    function appendOperator(operator) {
-      currentExpression += operator;
-      document.getElementById('result').textContent = currentExpression;
-    }
-
-    function calculate() {
+    function calculateResult() {
+      const result = document.getElementById("result");
       try {
-        const result = eval(currentExpression);
-        document.getElementById('result').textContent = result;
-        currentExpression = result;
+        result.value = eval(result.value);
       } catch (error) {
-        document.getElementById('result').textContent = 'Error';
-        currentExpression = '';
+        result.value = "Error";
       }
     }
 
     function clearResult() {
-      currentExpression = '';
-      document.getElementById('result').textContent = '';
+      const result = document.getElementById("result");
+      result.value = "";
+    }
+
+    function deleteCharacter() {
+      const result = document.getElementById("result");
+      result.value = result.value.slice(0, -1);
     }
   </script>
 </body>
