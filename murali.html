@@ -1,13 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
+    <title>Memory Game</title>
+    <style>
+        .color-button {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+    <h1>Memory Game</h1>
+    <p>Pay attention to the sequence of colors and repeat it:</p>
+    <div id="game-container"></div>
+    <button onclick="startGame()">Start Game</button>
 
-    <p><i>Lorem ipsum dolor sit, amet consectetur</i> adipisicing elit. Deleniti reiciendis sapiente quo tenetur architecto quidem totam inventore in eveniet dolor ratione nihil provident <strong>voluptatibus eaque</strong>, incidunt perferendis eius ea quas, quis facilis minima quasi! Earum, enim sunt nostrum pariatur assumenda blanditiis vero similique <strong>ullam est laborum corrupti</strong> modi soluta ducimus?</p>
-    
+    <script>
+        var gameSequence = [];
+        var playerSequence = [];
+        var gameContainer = document.getElementById('game-container');
+        var colorButtons = ['red', 'blue', 'green', 'yellow'];
+
+        function startGame() {
+            clearGame();
+            addToSequence();
+            playSequence();
+        }
+
+        function addToSequence() {
+            var randomColor = colorButtons[Math.floor(Math.random() * colorButtons.length)];
+            gameSequence.push(randomColor);
+        }
+
+        function playSequence() {
+            var i = 0;
+            var interval = setInterval(function() {
+                flashButton(gameSequence[i]);
+                i++;
+                if (i >= gameSequence.length) {
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }
+
+        function flashButton(color) {
+            var button = document.createElement('div');
+            button.classList.add('color-button');
+            button.style.backgroundColor = color;
+            gameContainer.appendChild(button);
+            setTimeout(function() {
+                button.remove();
+            }, 500);
+        }
+
+        function handleButtonClick(color) {
+            playerSequence.push(color);
+            flashButton(color);
+            if (playerSequence.length === gameSequence.length) {
+                checkSequence();
+            }
+        }
+
+        function checkSequence() {
+            for (var i = 0; i < gameSequence.length; i++) {
+                if (gameSequence[i] !== playerSequence[i]) {
+                    gameOver();
+                    return;
+                }
+            }
+            playerSequence = [];
+            addToSequence();
+            playSequence();
+        }
+
+        function gameOver() {
+            alert('Game Over! Your score: ' + (gameSequence.length - 1));
+            clearGame();
+        }
+
+        function clearGame() {
+            gameSequence = [];
+            playerSequence = [];
+            gameContainer.innerHTML = '';
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .calculator {
+            max-width: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        
+        .result-field {
+            background-color: #f8f9fa;
+            height: 60px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .button {
+            font-size: 18px;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container calculator">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control result-field" id="result" disabled>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary button" onclick="appendToResult('/')">/</button>
+                <button class="btn btn-primary button" onclick="appendToResult('*')">*</button>
+                <button class="btn btn-primary button" onclick="appendToResult('7')">7</button>
+                <button class="btn btn-primary button" onclick="appendToResult('8')">8</button>
+                <button class="btn btn-primary button" onclick="appendToResult('9')">9</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary button" onclick="appendToResult('-')">-</button>
+                <button class="btn btn-primary button" onclick="appendToResult('4')">4</button>
+                <button class="btn btn-primary button" onclick="appendToResult('5')">5</button>
+                <button class="btn btn-primary button" onclick="appendToResult('6')">6</button>
+                <button class="btn btn-primary button" onclick="appendToResult('+')">+</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary button" onclick="appendToResult('1')">1</button>
+                <button class="btn btn-primary button" onclick="appendToResult('2')">2</button>
+                <button class="btn btn-primary button" onclick="appendToResult('3')">3</button>
+                <button class="btn btn-primary button" onclick="calculate()">=</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary button" onclick="appendToResult('0')">0</button>
+                <button class="btn btn-primary button" onclick="appendToResult('.')">.</button>
+                <button class="btn btn-danger button" onclick="clearResult()">C</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let resultField = document.getElementById('result');
+        let currentInput = '';
+        
+        function appendToResult(value) {
+            currentInput += value;
+            resultField.value = currentInput;
+        }
+        
+        function clearResult() {
+            currentInput = '';
+            resultField.value = '';
+        }
+        
+        function calculate() {
+            try {
+                let result = eval(currentInput);
+                resultField.value = result;
+                currentInput = String(result);
+            } catch (error) {
+                resultField.value = 'Error';
+                currentInput = '';
+            }
+        }
+    </script>
+</body>
+</html>
