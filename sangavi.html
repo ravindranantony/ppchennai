@@ -1,10 +1,70 @@
 <!DOCTYPE html>
- <html> 
- <head>
- <title>Sangavi Homepage</title>  
- </head> 
- <body> 
- <h1 align="center">Checkout My Projects</h1>
- <h2><a href="/sangavi_calculator.html">Checkout My Scientific Calculator</a></h2>
- </body>  
- </html>
+<html>
+<head>
+  <title>My Personal Website</title>
+  <style>
+    body {
+      background-image: url("C:\Users\AdmiN\Pictures\Saved Pictures\ai related image - Bing images_files\Introduction-to-artificial-intelligence.png-image.jpg");
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .circle-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 50px auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .circle-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .popup-menu {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      display: none;
+    }
+
+    .popup-menu a {
+      display: block;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("popupMenu");
+      menu.style.display = menu.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</head>
+<body>
+  <div class="circle-image">
+    <img src="C:\Users\AdmiN\Downloads\image.jpg" alt="Beautiful Image">
+  </div>
+
+  <button onclick="toggleMenu()">Menu</button>
+
+  <div id="popupMenu" class="popup-menu">
+    <a href="https://drive.google.com/file/u/0/d/1d3qujkfhiRJf0hOUy4GmtgHkpoIyTJlh/view?usp=drivesdk&pli=1/resume.pdf" target="_blank">Resume</a>
+    <a href="https://github.com/Sangavisakthiey/Sangavisakthiey" target="sangavi_calculator.html">Projects</a>
+  </div>
+
+  <footer>
+    <p>© 2023 Sri Sangavi</p>
+  </footer>
+</body>
+</html>
