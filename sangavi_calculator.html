@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scientific Calculator</title>
+  <style>
+    .calculator {
+      width: 250px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .calculator input {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    .calculator button {
+      width: 31.33%;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+    <button onclick="clearResult()">C</button>
+    <button onclick="deleteLastCharacter()">DEL</button>
+    <button onclick="appendValue('(')">(</button>
+    <button onclick="appendValue(')')">)</button>
+    <button onclick="appendValue('**')">^</button>
+    <button onclick="appendValue('/')">/</button>
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button onclick="appendValue('*')">*</button>
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button onclick="appendValue('-')">-</button>
+    <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button onclick="appendValue('+')">+</button>
+    <button onclick="appendValue('0')">0</button>
+    <button onclick="appendValue('.')">.</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="calculateSin()">sin</button>
+    <button onclick="calculateCos()">cos</button>
+    <button onclick="calculateTan()">tan</button>
+    <button onclick="calculateSqrt()">√</button>
+    <button onclick="calculateLog()">log</button>
+    <button onclick="calculateExp()">exp</button>
+  </div>
+
+  <script>
+    function appendValue(value) {
+      document.getElementById('result').value += value;
+    }
+
+    function calculate() {
+      try {
+        const result = eval(document.getElementById('result').value);
+        document.getElementById('result').value = result;
+      } catch (error) {
+        document.getElementById('result').value = 'Error';
+      }
+    }
+
+    function clearResult() {
+      document.getElementById('result').value = '';
+    }
+
+    function deleteLastCharacter() {
+      const currentValue = document.getElementById('result').value;
+      document.getElementById('result').value = currentValue.slice(0, -1);
+    }
+
+    function calculateSin() {
+      const currentValue = document.getElementById('result').value;
+      const result = Math.sin(eval(currentValue));
+      document.getElementById('result').value = result;
+    }
+
+    function calculateCos() {
+      const currentValue = document.getElementById('result').value;
+      const result = Math.cos(eval(currentValue));
+      document.getElementById('result').value = result;
+    }
+
+    function calculateTan() {
+      const currentValue = document.getElementById('result').value;
+      const result = Math.tan(eval(currentValue));
+      document.getElementById('result').value = result;
+    }
+
+    function calculateSqrt() {
+      const currentValue = document.getElementById('result').value;
+      const result = Math.sqrt(eval(currentValue));
+      document.getElementById('result').value = result;
+    }
+
+    function calculateLog() {
+      const currentValue = document.getElementById('result').value;
+      const result = Math.log10(eval(currentValue));
+      document.getElementById('result').value = result;
+    }
+
+    function calculateExp() {
+      const currentValue = document.getElementById('result').value;
+      const result = Math.exp(eval(currentValue));
+      document.getElementById('result').value = result;
+    }
+  </script>
+</body>
+</html>
+
