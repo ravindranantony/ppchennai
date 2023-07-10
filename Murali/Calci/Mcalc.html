@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="Mcalci.css">
+  <script defer src="Mcalci.js"></script>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+    <table>
+      <tr>
+        <td><button onclick="clearResult()">C</button></td>
+        <td><button onclick="deleteLastCharacter()">&#9003;</button></td>
+        <td><button onclick="insertCharacter('**')">^</button></td>
+        <td><button onclick="insertCharacter('/')">/</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="insertCharacter('7')">7</button></td>
+        <td><button onclick="insertCharacter('8')">8</button></td>
+        <td><button onclick="insertCharacter('9')">9</button></td>
+        <td><button onclick="insertCharacter('*')">*</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="insertCharacter('4')">4</button></td>
+        <td><button onclick="insertCharacter('5')">5</button></td>
+        <td><button onclick="insertCharacter('6')">6</button></td>
+        <td><button onclick="insertCharacter('-')">-</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="insertCharacter('1')">1</button></td>
+        <td><button onclick="insertCharacter('2')">2</button></td>
+        <td><button onclick="insertCharacter('3')">3</button></td>
+        <td><button onclick="insertCharacter('+')">+</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="insertCharacter('0')">0</button></td>
+        <td><button onclick="insertCharacter('.')">.</button></td>
+        <td><button onclick="calculateResult()">=</button></td>
+        <td><button>😉</button></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
