@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fibonacci Series</title>
+  <script>
+    function fibonacciSeries(n) {
+      var fibSeries = [];
+      if (n >= 1) {
+        fibSeries.push(0);
+      }
+      if (n >= 2) {
+        fibSeries.push(1);
+      }
+
+      for (var i = 2; i < n; i++) {
+        var nextNum = fibSeries[i - 1] + fibSeries[i - 2];
+        fibSeries.push(nextNum);
+      }
+
+      return fibSeries;
+    }
+
+    function displayFibonacciSeries() {
+      var n = parseInt(document.getElementById("number").value);
+      var fibSeries = fibonacciSeries(n);
+      var result = "";
+
+      for (var i = 0; i < fibSeries.length; i++) {
+        result += fibSeries[i] + " ";
+      }
+
+      document.getElementById("output").textContent = result;
+    }
+  </script>
+</head>
+<body>
+  <h1>Fibonacci Series</h1>
+  <p>
+    Enter the number of Fibonacci numbers to generate:
+    <input type="number" id="number" min="1" value="10" />
+    <button onclick="displayFibonacciSeries()">Generate</button>
+  </p>
+  <p id="output"></p>
+</body>
+</html>
