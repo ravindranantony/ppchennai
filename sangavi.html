@@ -1,70 +1,63 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Personal Website</title>
+  <title>My Blog</title>
   <style>
     body {
-      background-image: url("C:\Users\AdmiN\Pictures\Saved Pictures\ai related image - Bing images_files\Introduction-to-artificial-intelligence.png-image.jpg");
-      background-size: cover;
-      background-position: center;
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
-
-    .circle-image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 50px auto;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .circle-image img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .popup-menu {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: white;
+    header {
+      background-color: #5831e6;
+      color: #5eafe6;
       padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      display: none;
     }
-
-    .popup-menu a {
-      display: block;
-      margin-bottom: 10px;
-      text-decoration: none;
-      color: #333;
+    h1 {
+      margin: 0;
+    }
+    section {
+      padding: 40px;
+    }
+    .about {
+      background-color: #f1f1f1;
+    }
+    .projects {
+      background-color: #fff;
+    }
+    .project-item {
+      margin-bottom: 20px;
     }
   </style>
-  <script>
-    function toggleMenu() {
-      var menu = document.getElementById("popupMenu");
-      menu.style.display = menu.style.display === "none" ? "block" : "none";
-    }
-  </script>
 </head>
 <body>
-  <div class="circle-image">
-    <img src="C:\Users\AdmiN\Downloads\image.jpg" alt="Beautiful Image">
-  </div>
+  <header>
+    <h1>Welcome to My Blog</h1>
+  </header>
+  
+  <section class="about">
+    <h2>About Me</h2>
+    <marquee>I am Sri Sangavi</marquee>
+    
 
-  <button onclick="toggleMenu()">Menu</button>
-
-  <div id="popupMenu" class="popup-menu">
-    <a href="https://drive.google.com/file/u/0/d/1d3qujkfhiRJf0hOUy4GmtgHkpoIyTJlh/view?usp=drivesdk&pli=1/resume.pdf" target="_blank">Resume</a>
-    <a href="https://github.com/Sangavisakthiey/Sangavisakthiey" target="sangavi_calculator.html">Projects</a>
-  </div>
-
-  <footer>
-    <p>© 2023 Sri Sangavi</p>
-  </footer>
+  </section>
+  
+  <div>
+    <h2>My Projects</h2>
+      <h3><a href="/ravi_calculator.html">Checkout My Calculator</a></h3>
+      <p>Javascript calculator project</p>
+      </div>
+<div>
+      <h3>Project 2</h3>
+      <h3><a href="/sangavijstask.html">display fibonacci Series</a></h3>
+      <h3><a href="/sangaviseries.js"></a>display Fibonacci Series</h3>
+      <p>Fibonacci fibonacciSeries</p>
+</div>
+    <div>
+      <h3>Project 3</h3>
+      <p>Description of project 3.</p>
+    </div>
+  </section>
 </body>
 </html>
