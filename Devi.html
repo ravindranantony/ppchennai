@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>JavaScript Calculator</title>
-  <style>
-    /* CSS */
-    body {
-      background-color: #f2f2f2;
-      font-family: Arial, sans-serif;
+  function printFibonacci(n) {
+    let a = 0, b = 1, c;
+    console.log(a);
+    console.log(b);
+    for (let i = 2; i < n; i++) {
+      c = a + b;
+      console.log(c);
+      a = b;
+      b = c;
     }
-    
-    c = a + b;
-    console.log(c);
-    a = b;
-    b = c;
   }
-}
-printFibonacci(10); // prints the first 10 numbers in the Fibonacci series
+  </html>
+  
