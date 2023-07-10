@@ -1,0 +1,37 @@
+.calculator {
+    width: 250px;
+    margin: 10rem auto;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 5px;
+  }
+  
+  table {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    font-family: 'Orbitron', sans-serif;
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: right;
+    border: inset #c0c0c0  ;
+    
+  }
+  
+  button {
+    font-family: 'Orbitron', sans-serif;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #808080 ;
+  }
+  body{
+    background-color: #008080 ;
+  }
+  
