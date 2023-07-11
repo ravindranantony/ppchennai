@@ -1,107 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator</title>
-    <style>
-        body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-}
-
-.calculator {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    width: 250px;
-}
-
-#result {
-    font-size: 24px;
-    padding: 5px;
-    text-align: right;
-    margin-bottom: 10px;
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
-}
-
-button {
-    font-size: 20px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #e0e0e0;
-}
-
-    </style>
+  <style>
+    body {
+      background-color: #f2d790;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .calculator {
+      width: 300px;
+      background-color: #43536c;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-gap: 5px;
+    }
+    
+    .calculator input[type="text"] {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      background-color: #87b4c7;
+      color: white;
+      margin-bottom: 10px;
+    }
+    
+    .button {
+      width: 50px;
+      height: 50px;
+      background-color: #6ba1bb;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    
+    .button:hover {
+      background-color: rgba(135, 180, 199, 0.8);
+    }
+    
+    .button.clear {
+      grid-column: span 2;
+    }
+    
+    .button.equal {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    
+    @media (max-width: 400px) {
+      .calculator {
+        width: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="result" disabled>
-        <div class="buttons">
-            <button onclick="clearResult()">C</button>
-            <button onclick="appendToResult('/')">/</button>
-            <button onclick="appendToResult('*')">*</button>
-            <button onclick="appendToResult('7')">7</button>
-            <button onclick="appendToResult('8')">8</button>
-            <button onclick="appendToResult('9')">9</button>
-            <button onclick="appendToResult('-')">-</button>
-            <button onclick="appendToResult('4')">4</button>
-            <button onclick="appendToResult('5')">5</button>
-            <button onclick="appendToResult('6')">6</button>
-            <button onclick="appendToResult('+')">+</button>
-            <button onclick="appendToResult('1')">1</button>
-            <button onclick="appendToResult('2')">2</button>
-            <button onclick="appendToResult('3')">3</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="appendToResult('0')">0</button>
-            <button onclick="appendToResult('.')">.</button>
-        </div>
-    </div>
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+    <button class="button clear" onclick="clearResult()">AC</button>
+    <button class="button" onclick="backspace()">&#9003;</button>
+    <button class="button" onclick="addToResult('(')">(</button>
+    <button class="button" onclick="addToResult(')')">)</button>
+    <button class="button" onclick="addToResult('7')">7</button>
+    <button class="button" onclick="addToResult('8')">8</button>
+    <button class="button" onclick="addToResult('9')">9</button>
+    <button class="button" onclick="addToResult('/')">/</button>
+    <button class="button" onclick="addToResult('4')">4</button>
+    <button class="button" onclick="addToResult('5')">5</button>
+    <button class="button" onclick="addToResult('6')">6</button>
+    <button class="button" onclick="addToResult('*')">*</button>
+    <button class="button" onclick="addToResult('1')">1</button>
+    <button class="button" onclick="addToResult('2')">2</button>
+    <button class="button" onclick="addToResult('3')">3</button>
+    <button class="button" onclick="addToResult('-')">-</button>
+    <button class="button" onclick="addToResult('0')">0</button>
+    <button class="button" onclick="addToResult('.')">.</button>
+    <button class="button" onclick="addToResult('^')">^</button>
+    <button class="button" onclick="addToResult('+')">+</button>
+    <button class="button equal" onclick="calculate()">=</button>
+  </div>
 
-    <script>
-        let resultField = document.getElementById('result');
-let currentInput = '';
-
-function appendToResult(value) {
-    currentInput += value;
-    resultField.value = currentInput;
-}
-
-function clearResult() {
-    currentInput = '';
-    resultField.value = '';
-}
-
-function calculate() {
-    try {
-        let result = eval(currentInput);
-        resultField.value = result;
-        currentInput = String(result);
-    } catch (error) {
-        resultField.value = 'Error';
-        currentInput = '';
+  <script>
+    function addToResult(value) {
+      var result = document.getElementById('result');
+      result.value += value;
     }
-}
 
-    </script>
+    function clearResult() {
+      var result = document.getElementById('result');
+      result.value = '';
+    }
+
+    function backspace() {
+      var result = document.getElementById('result');
+      result.value = result.value.slice(0, -1);
+    }
+
+    function calculate() {
+      var result = document.getElementById('result');
+      try {
+        result.value = eval(result.value);
+      } catch (error) {
+        result.value = 'Error';
+      }
+    }
+  </script>
 </body>
 </html>
