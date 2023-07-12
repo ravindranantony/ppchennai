@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic-Tac-Toe</title>
+  <style>
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 300px;
+      height: 300px;
+    }
+
+    .cell {
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tic-Tac-Toe</h1>
+  <div class="board" onclick="play(event)">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+
+  <script>
+    var currentPlayer = "X";
+    var cells = document.getElementsByClassName("cell");
+
+    function play(event) {
+      var cell = event.target;
+      if (cell.innerText === "") {
+        cell.innerText = currentPlayer;
+        if (checkWin()) {
+          alert("Player " + currentPlayer + " wins!");
+          reset();
+        } else if (checkDraw()) {
+          alert("It's a draw!");
+          reset();
+        } else {
+          currentPlayer = currentPlayer === "X" ? "O" : "X";
+        }
+      }
+    }
+
+    function checkWin() {
+      var winningCombos = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+      ];
+
+      for (var combo of winningCombos) {
+        if (
+          cells[combo[0]].innerText === currentPlayer &&
+          cells[combo[1]].innerText === currentPlayer &&
+          cells[combo[2]].innerText === currentPlayer
+        ) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    function checkDraw() {
+      for (var cell of cells) {
+        if (cell.innerText === "") {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function reset() {
+      for (var cell of cells) {
+        cell.innerText = "";
+      }
+      currentPlayer = "X";
+    }
+  </script>
+</body>
+</html>
