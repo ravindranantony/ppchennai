@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-image: url(https://wallpaperaccess.com/full/2078959.jpg);
+    background-size: cover;
+}
+
+h1, h3 {
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 10%;
+}
+
+#row-1, #row-2, #row-3 {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 80px;
+    height: 80px;
+    background-color: #2a2a2c;
+}
+
+#reset {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#resultText,
+#reset-btn {
+    visibility: hidden;
+}
+
+#reset-btn {
+    width: 100px;
+    height: 30px;
+    border-width: 0;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: white;
+}
+
+#reset-btn:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* ...Existing CSS code... */
+
+.btn {
+    width: 80px;
+    height: 80px;
+    background-color: #2a2a2c;
+    color: white;  /* Added */
+    font-weight: bold;  /* Added */
+}
+
+/* ...Existing CSS code... */
+
+#reset-btn {
+    width: 100px;
+    height: 30px;
+    border-width: 0;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: white;
+    color: black;  /* Added */
+}
+
+/* ...Existing CSS code... */
+
+#reset {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#reset-btn,
+#clear-btn {
+    width: 100px;
+    height: 30px;
+    border-width: 0;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+}
+
+#reset-btn {
+    margin-right: 10px;
+}
+
+#clear-btn {
+    margin-left: 10px;
+}
+
+#reset-btn:hover,
+#clear-btn:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* ...Existing CSS code... */
