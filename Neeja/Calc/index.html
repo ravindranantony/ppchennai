@@ -2,6 +2,7 @@
 <html>
 <head>
   <style>
+    
     body {
       background-color: #f2d790;
       margin: 0;
@@ -69,6 +70,8 @@
   </style>
 </head>
 <body>
+
+  
   <div class="calculator">
     <input type="text" id="result" readonly>
     <button class="button clear" onclick="clearResult()">AC</button>
@@ -82,7 +85,7 @@
     <button class="button" onclick="addToResult('4')">4</button>
     <button class="button" onclick="addToResult('5')">5</button>
     <button class="button" onclick="addToResult('6')">6</button>
-    <button class="button" onclick="addToResult('*')">*</button>
+    <button class="button" onclick="addToResult('*')">x</button>
     <button class="button" onclick="addToResult('1')">1</button>
     <button class="button" onclick="addToResult('2')">2</button>
     <button class="button" onclick="addToResult('3')">3</button>
@@ -92,8 +95,9 @@
     <button class="button" onclick="addToResult('^')">^</button>
     <button class="button" onclick="addToResult('+')">+</button>
     <button class="button equal" onclick="calculate()">=</button>
+    
   </div>
-
+  
   <script>
     function addToResult(value) {
       var result = document.getElementById('result');
