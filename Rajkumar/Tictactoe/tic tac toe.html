@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <style>
+    body {
+	background: linear-gradient(135deg, #2deeff, #ff6ec4);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+
+    .container {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .board {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .cell {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      border: 2px solid #ddd;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .cell.X {
+      color: #f44336; /* Red color for X */
+      font-weight: bold;
+    }
+
+    .cell.O {
+      color: #2196f3; /* Blue color for O */
+      font-weight: bold;
+    }
+
+    .cell:hover {
+      background-color: #f0f0f0;
+    }
+
+    .message {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .player-turn {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif; /* Change the font here */
+    }
+
+    .reset-btn {
+      display: block;
+      margin: 0 auto;
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .reset-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="message">Tic Tac Toe</h1>
+    <h2 class="player-turn">Player Turn: <span id="current-player">X</span></h2>
+    <div class="board">
+      <div class="cell" onclick="makeMove(0)"></div>
+      <div class="cell" onclick="makeMove(1)"></div>
+      <div class="cell" onclick="makeMove(2)"></div>
+      <div class="cell" onclick="makeMove(3)"></div>
+      <div class="cell" onclick="makeMove(4)"></div>
+      <div class="cell" onclick="makeMove(5)"></div>
+      <div class="cell" onclick="makeMove(6)"></div>
+      <div class="cell" onclick="makeMove(7)"></div>
+      <div class="cell" onclick="makeMove(8)"></div>
+    </div>
+    <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+  </div>
+
+  <script>
+    let currentPlayer = "X";
+    let moves = ["", "", "", "", "", "", "", "", ""];
+    const winPatterns = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
+
+    function makeMove(index) {
+      if (!moves[index]) {
+        moves[index] = currentPlayer;
+        document.getElementsByClassName("cell")[index].innerText = currentPlayer;
+        document.getElementsByClassName("cell")[index].classList.add(currentPlayer);
+        if (checkWin(currentPlayer)) {
+          displayMessage(currentPlayer + " wins!");
+          disableBoard();
+        } else if (checkDraw()) {
+          displayMessage("It's a draw!");
+          disableBoard();
+        } else {
+          currentPlayer = currentPlayer === "X" ? "O" : "X";
+          document.getElementById("current-player").innerText = currentPlayer;
+        }
+      }
+    }
+
+    function checkWin(player) {
+      for (let i = 0; i < winPatterns.length; i++) {
+        let pattern = winPatterns[i];
+        if (
+          moves[pattern[0]] === player &&
+          moves[pattern[1]] === player &&
+          moves[pattern[2]] === player
+        ) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    function checkDraw() {
+      return moves.every(move => move !== "");
+    }
+
+    function displayMessage(message) {
+      document.getElementsByClassName("message")[0].innerText = message;
+    }
+
+    function disableBoard() {
+      let cells = document.getElementsByClassName("cell");
+      for (let i = 0; i < cells.length; i++) {
+        cells[i].onclick = null;
+      }
+    }
+
+    function resetGame() {
+      currentPlayer = "X";
+      moves = ["", "", "", "", "", "", "", "", ""];
+      let cells = document.getElementsByClassName("cell");
+      for (let i = 0; i < cells.length; i++) {
+        cells[i].innerText = "";
+        cells[i].classList.remove("X", "O");
+        cells[i].onclick = function () {
+          makeMove(i);
+        };
+      }
+      displayMessage("Tic Tac Toe");
+      document.getElementById("current-player").innerText = currentPlayer;
+    }
+  </script>
+</body>
+</html>
