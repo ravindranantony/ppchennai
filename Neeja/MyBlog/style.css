@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .bg-purple {
+    background-color: black;
+  }
+  
+  .text-purple {
+    color: #bd15bd;
+  }
+  
+  .project-thumbnail {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  
+  .profile-image{
+    margin-right: 100px
+  }
+  
+  
+  

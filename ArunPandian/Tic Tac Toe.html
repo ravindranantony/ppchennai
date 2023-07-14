@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+    <style>
+      #tic-tac-toe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: lightgray;
+}
+body{
+  background-color: blueviolet;
+}
+
+    </style>
+</head>
+<body>
+  <div id="tic-tac-toe">
+    <div class="row">
+      <div class="cell" onclick="makeMove(0, 0)"></div>
+      <div class="cell" onclick="makeMove(0, 1)"></div>
+      <div class="cell" onclick="makeMove(0, 2)"></div>
+    </div>
+    <div class="row">
+      <div class="cell" onclick="makeMove(1, 0)"></div>
+      <div class="cell" onclick="makeMove(1, 1)"></div>
+      <div class="cell" onclick="makeMove(1, 2)"></div>
+    </div>
+    <div class="row">
+      <div class="cell" onclick="makeMove(2, 0)"></div>
+      <div class="cell" onclick="makeMove(2, 1)"></div>
+      <div class="cell" onclick="makeMove(2, 2)"></div>
+    </div>
+  </div>
+  <script>
+
+  alert("Welcome to Tic Tac Toe Game 💐")
+
+    let currentPlayer = 'X';
+let gameBoard = [
+  ['', '', ''],
+  ['', '', ''],
+  ['', '', '']
+];
+
+function makeMove(row, col) {
+  if (gameBoard[row][col] === '') {
+    gameBoard[row][col] = currentPlayer;
+    document.getElementById('tic-tac-toe').children[row].children[col].innerText = currentPlayer;
+    currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
+    if (checkWin()) {
+      alert(currentPlayer + ' wins!');
+      resetBoard();
+    } else if (checkTie()) {
+      alert('It\'s a tie!');
+      resetBoard();
+    }
+  }
+}
+
+function checkWin() {
+  for (let i = 0; i < 3; i++) {
+    if (gameBoard[i][0] !== '' && gameBoard[i][0] === gameBoard[i][1] && gameBoard[i][0] === gameBoard[i][2]) {
+      return true;
+    }
+    if (gameBoard[0][i] !== '' && gameBoard[0][i] === gameBoard[1][i] && gameBoard[0][i] === gameBoard[2][i]) {
+      return true;
+    }
+  }
+  if (gameBoard[0][0] !== '' && gameBoard[0][0] === gameBoard[1][1] && gameBoard[0][0] === gameBoard[2][2]) {
+    return true;
+  }
+  if (gameBoard[0][2] !== '' && gameBoard[0][2] === gameBoard[1][1] && gameBoard[0][2] === gameBoard[2][0]) {
+    return true;
+  }
+  return false;
+}
+
+function checkTie() {
+  for (let row = 0; row < 3; row++) {
+    for (let col = 0; col < 3; col++) {
+      if (gameBoard[row][col] === '') {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+function resetBoard() {
+  currentPlayer = 'X';
+  gameBoard = [
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', '']
+  ];
+  const cells = document.getElementsByClassName('cell');
+  for (let i = 0; i < cells.length; i++) {
+    cells[i].innerText = '';
+  }
+}
+
+
+  </script>
+</body>
+</html>
