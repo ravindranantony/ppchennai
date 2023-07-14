@@ -32,7 +32,7 @@
     canvas.width = width;
     canvas.height = height;
     
-    image.src = './assets/wand.png';
+    image.src = '2024.gif';
 
     const drawWand = () => {
         positions.wandX = (width * .91) - image.width;
