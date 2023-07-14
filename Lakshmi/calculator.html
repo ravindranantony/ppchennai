@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    #calculator-image {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <img id="calculator-image" src="https://png.pngtree.com/element_our/20190531/ourmid/pngtree-cartoon-calculator-image_1288760.jpg" alt="Calculator">
+  </div>
+  <div>
+    <input type="text" id="result" readonly>
+  </div>
+  <table>
+    <tr>
+      <td><button onclick="appendNumber('7')">7</button></td>
+      <td><button onclick="appendNumber('8')">8</button></td>
+      <td><button onclick="appendNumber('9')">9</button></td>
+      <td><button onclick="appendOperator('+')">+</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="appendNumber('4')">4</button></td>
+      <td><button onclick="appendNumber('5')">5</button></td>
+      <td><button onclick="appendNumber('6')">6</button></td>
+      <td><button onclick="appendOperator('-')">-</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="appendNumber('1')">1</button></td>
+      <td><button onclick="appendNumber('2')">2</button></td>
+      <td><button onclick="appendNumber('3')">3</button></td>
+      <td><button onclick="appendOperator('*')">*</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="appendNumber('0')">0</button></td>
+      <td><button onclick="appendNumber('.')">.</button></td>
+      <td><button onclick="clearInput()">C</button></td>
+      <td><button onclick="appendOperator('/')">/</button></td>
+    </tr>
+    <tr>
+      <td colspan="4"><button onclick="calculate()">=</button></td>
+    </tr>
+  </table>
+
+  <script>
+    let currentInput = '';
+
+    function appendNumber(number) {
+      currentInput += number;
+      document.getElementById('result').value = currentInput;
+    }
+
+    function appendOperator(operator) {
+      currentInput += operator;
+      document.getElementById('result').value = currentInput;
+    }
+
+    function clearInput() {
+      currentInput = '';
+      document.getElementById('result').value = currentInput;
+    }
+
+    function calculate() {
+      try {
+        const result = eval(currentInput);
+        document.getElementById('result').value = result;
+        currentInput = '';
+      } catch (error) {
+        document.getElementById('result').value = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>
