@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fibonacci Series Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: violet;
+    }
+    input[type="number"] {
+      width: 200px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+    }
+        #output {
+      margin-top: 30px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+  </style>
+
+
+</head>
+<body>
+
+  <h1>Fibonacci Series Generator</h1>
+  <input type="number" id="numInput" placeholder="Enter the number">
+  <button onclick="generateSequence()">Generate Fibonacci series</button>
+  <div id="output"></div>
+
+  <script>
+
+      function generateSequence() {
+      var numTerms = document.getElementById("numInput").value;
+
+      if (numTerms === "" || numTerms <= 0) {
+        document.getElementById("output").innerText = "Please enter a positive integer.";
+        return;
+      }
+
+      numTerms = parseInt(numTerms);
+
+      var sequence = [0, 1];
+
+      for (var i = 2; i < numTerms; i++) {
+        sequence.push(sequence[i - 1] + sequence[i - 2]);
+      }
+
+      document.getElementById("output").innerText = sequence.join(", ");
+    }
+
+  </script>
+</body>
+</html>
