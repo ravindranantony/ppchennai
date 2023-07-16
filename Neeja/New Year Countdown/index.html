@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New year Countdown</title>
+	<link rel="stylesheet" type="text/css" href="fire.css">
+	<script type="text/javascript" src="fire.js"></script>
+	<style>
+		body, html{
+			margin: 0px;
+			height: 100%;
+			background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+			overflow-y: hidden;
+		}
+		#countdown-container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			font-size: 24px;
+			font-family: Arial, sans-serif;
+		}
+		.countdown-element {
+			display: inline-block;
+			background-color: white;
+			width: 80px;
+			font-weight: bold;
+			padding: 20px;
+			color: black;
+			margin: 5px;
+		}
+		.blink {
+			color: white;
+			text-shadow: 0 0 10px #3498DB,
+               0 0 20px #3498DB,
+               0 0 30px #3498DB,
+               0 0 40px #2980B9,
+               0 0 70px #2980B9,
+               0 0 80px #2980B9,
+               0 0 100px #2980B9,
+               0 0 150px #2980B9;
+		}
+		
+		
+	</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div id="countdown-container">
+	<h1 class="blink">NEW YEAR COUNTDOWN</h1>
+	<div class="countdown-element">
+		<span id="days">0</span> days
+	</div>
+	<div class="countdown-element">
+		<span id="hours">0</span> hours
+	</div>
+	<div class="countdown-element">
+		<span id="minutes">0</span> minutes
+	</div>
+	<div class="countdown-element">
+		<span id="seconds">0</span> seconds
+	</div>
+</div>
+
+<script>
+	"use strict";
+
+	let canvas, width, height, ctx;
+	let fireworks = [];
+	let particles = [];
+	let countdownDate = new Date("January 1, 2024 00:00:00").getTime();
+
+	function setup() {
+		canvas = document.getElementById("canvas");
+		setSize(canvas);
+		ctx = canvas.getContext("2d");
+		ctx.fillStyle = "#000000";
+		ctx.fillRect(0, 0, width, height);
+		fireworks.push(new Firework(Math.random()*(width-200)+100));
+		window.addEventListener("resize",windowResized);
+		document.addEventListener("click",onClick);
+	}
+
+	setTimeout(setup,1);
+
+	function loop(){
+		ctx.globalAlpha = 0.1;
+		ctx.fillStyle = "#000000";
+		ctx.fillRect(0, 0, width, height);
+		ctx.globalAlpha = 1;
+
+		for(let i=0; i<fireworks.length; i++){
+			let done = fireworks[i].update();
+			fireworks[i].draw();
+			if(done) fireworks.splice(i, 1);
+		}
+
+		for(let i=0; i<particles.length; i++){
+			particles[i].update();
+			particles[i].draw();
+			if(particles[i].lifetime>80) particles.splice(i,1);
+		}
+
+		if(Math.random()<1/60) fireworks.push(new Firework(Math.random()*(width-200)+100));
+
+		// Update countdown elements
+		updateCountdown();
+	}
+	setInterval(loop, 1/60);
+	//setInterval(loop, 100/60);
+	class Particle{
+		constructor(x, y, col){
+			this.x = x;
+			this.y = y;
+			this.col = col;
+			this.vel = randomVec(2);
+			this.lifetime = 0;
+		}
+	
+		update(){
+			this.x += this.vel.x;
+			this.y += this.vel.y;
+			this.vel.y += 0.02;
+			this.vel.x *= 0.99;
+			this.vel.y *= 0.99;
+			this.lifetime++;
+		}
+	
+		draw(){
+			ctx.globalAlpha = Math.max(1-this.lifetime/80, 0);
+			ctx.fillStyle = this.col;
+			ctx.fillRect(this.x, this.y, 2, 2);
+		}
+	}
+	
+	class Firework{
+		constructor(x){
+			this.x = x;
+			this.y = height;
+			this.isBlown = false;
+			this.col = randomCol();
+		}
+	
+		update(){
+			this.y -= 3;
+			if(this.y < 350-Math.sqrt(Math.random()*500)*40){
+				this.isBlown = true;
+				for(let i=0; i<60; i++){
+					particles.push(new Particle(this.x, this.y, this.col))
+				}
+			}
+			return this.isBlown;
+		}
+	
+		draw(){
+			ctx.globalAlpha = 1;
+			ctx.fillStyle = this.col;
+			ctx.fillRect(this.x, this.y, 2, 2);
+		}
+	}
+	
+	function randomCol(){
+		var letter = '0123456789ABCDEF';
+		var nums = [];
+	
+		for(var i=0; i<3; i++){
+			nums[i] = Math.floor(Math.random()*256);
+		}
+	
+		let brightest = 0;
+		for(var i=0; i<3; i++){
+			if(brightest<nums[i]) brightest = nums[i];
+		}
+	
+		brightest /=255;
+		for(var i=0; i<3; i++){
+			nums[i] /= brightest;
+		}
+	
+		let color = "#";
+		for(var i=0; i<3; i++){
+			color += letter[Math.floor(nums[i]/16)];
+			color += letter[Math.floor(nums[i]%16)];
+		}
+		return color;
+	}
+	
+	function randomVec(max){
+		let dir = Math.random()*Math.PI*2;
+		let spd = Math.random()*max;
+		return{x: Math.cos(dir)*spd, y: Math.sin(dir)*spd};
+	}
+	
+	function setSize(canv){
+		canv.style.width = (innerWidth) + "px";
+		canv.style.height = (innerHeight) + "px";
+		width = innerWidth;
+		height = innerHeight;
+	
+		canv.width = innerWidth*window.devicePixelRatio;
+		canv.height = innerHeight*window.devicePixelRatio;
+		canvas.getContext("2d").scale(window.devicePixelRatio, window.devicePixelRatio);
+	}
+	
+	function onClick(e){
+		fireworks.push(new Firework(e.clientX));
+	}
+	
+	function windowResized(){
+		setSize(canvas);
+		ctx.fillStyle = "#000000";
+		ctx.fillRect(0, 0, width, height);
+	}
+	
+	function updateCountdown() {
+		// Calculate time difference
+		let now = new Date().getTime();
+		let timeRemaining = countdownDate - now;
+
+		// Calculate days, hours, minutes, seconds
+		let days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+		let hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		let minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+		let seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+		// Update countdown elements
+		document.getElementById("days").textContent = days;
+		document.getElementById("hours").textContent = hours;
+		document.getElementById("minutes").textContent = minutes;
+		document.getElementById("seconds").textContent = seconds;
+	}
+</script>
+</body>
+</html>
