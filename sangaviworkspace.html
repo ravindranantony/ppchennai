@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to my blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    body {
+      background-color: #cee3eb;
+      font-family: Arial, sans-serif;
+    }
+
+    .profile-image {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-right: 20px;
+      animation: zoom-in 0.5s;
+    }
+
+    @media (min-width: 1000px) {
+      .profile-image {
+        float: right;
+        margin-right: 200px;
+      }
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .description {
+      margin-top: 10px;
+    }
+
+    .link-container {
+      display:inline-flex;
+      justify-content: center;
+      margin-top: 200px;
+    }
+
+    .link-container a {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #75acf3;
+      color: #ffffff;
+      text-align:center;
+      line-height: 100px;
+      margin-right: 100px;
+      animation: zoom-in 0.5s;
+    }
+
+    .link-container a:last-child {
+      margin-right: 0;
+    }
+
+    .projects-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    .project-image {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .project-name {
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    @keyframes zoom-in {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-purple text-white py-5">
+    <div class="container text-center">
+      <h1>My Workspace</h1>
+      
+      <div class="social-icons mt-4">
+        <a href="#" class="fa fa-github"></a>
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+      </div>
+    </div>
+  </header>
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="https://media.licdn.com/dms/image/D5603AQHYwmh_j4DfaQ/profile-displayphoto-shrink_200_200/0/1688108404019?e=1694649600&v=beta&t=PwNxYST96wd2hgnrjGM9DYWql85nOMW0HfCQMNDTvAs" alt="Profile Image" class="profile-image">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="title"><b>  About Me</b></h2>
+          <p class="description">
+            Hi there! I'm Sri Sangavi, and I'm excited to tell you a bit about myself. I have a strong passion for tecnologies , which has been a driving force in my life. It fuels my creativity and motivates me to constantly explore new ideas.I believe in the power of personal growth and continuous learning. That's why I'm always seeking opportunities to expand my knowledge and develop new skills.<br><strong> Front end developer web/AI - Pepper Programing</strong><br><strong>BSC.Information Tecnology</strong>
+          </p>
+          <div class="link-container">
+            <a href="https://drive.google.com/file/d/1d3qujkfhiRJf0hOUy4GmtgHkpoIyTJlh/view?usp=drivesdk">CV</a>
+            <a href="https://www.linkedin.com/in/sri-sangavi-s-m-02b022259/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 projects-title">Projects</h2>
+      <div class="row" id="project-container">
+        <div class="col-lg-4" onclick="openInNewTab('sangavi_calculator.html')">
+          <img src="https://th.bing.com/th/id/OIP.tUOu46bWpcRmAVGgRh0XQQHaHa?w=169&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 1" class="project-image">
+          <p class="project-name">Calculator</p>
+        </div>
+        <div class="col-lg-4" onclick="openInNewTab('sangavijstask.html')">
+          <img src="https://th.bing.com/th/id/OIP.-aXkaSfIXcxAk8z8J8ZijgHaGF?w=216&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 2" class="project-image">
+          <p class="project-name">Fibonacci Series</p>
+        </div>
+        <div class="col-lg-4" onclick="openInNewTab('sangavitictactoe.html')">
+          <img src="https://th.bing.com/th/id/OIP.z34ARszvRncdJMfoV5Lv3QHaHa?w=161&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 3" class="project-image">
+          <p class="project-name">Tic Tac Toe</p>
+        </div>
+        <div class="col-lg-4" onclick="openInNewTab('sangavi_2024.html')">
+          <img src="https://th.bing.com/th/id/OIP.fMrAKIzfokv7SqobTv1VOgAAAA?w=186&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 3" class="project-image">
+          <p class="project-name"> New Year countdown </p>
+        </div>
+
+      </div>
+    </div>
+    <div class="social-icons mt-4">
+  <a href="#" class="fa fa-github"></a>
+  <a href="#" class="fa fa-twitter"></a>
+  <a href="#" class="fa fa-linkedin"></a>
+  <a href="#" class="fa fa-instagram"></a>
+</div>
+
+  </section>
+  <footer class="bg-purple text-white py-3">
+    <div class="container text-center">
+      <p>&copy; 2023 [Sri Sangavi]. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function openInNewTab(url) {
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
