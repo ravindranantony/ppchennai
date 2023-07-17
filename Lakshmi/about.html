@@ -1,97 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>My Blog</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lakshmi Karthik's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="profile-pic">
+      <img src="C:\Users\kklak\lakshmi\ppchennai\ppchennai\Lakshmi\images\profilepic.jpg" alt="Profile Picture" style="width:300px;height:400px;>
+    </div>
+    <div class="profile-info">
+      <h1>Lakshmi Karthik</h1>
+	  <h2>Front End Web Development Engineer(Web/AI)</h2>  
+	  <div class="col-lg-6">
+          <h2>About Me</h2>
+          <p>
+            "Hello!, I'm a Self-motivated web developer ,Passionate about building user-friendly dynamic web applications.Thank you for visiting my profile, and I look forward to connecting with you soon!"
+         </p>
+        </div>
+    </div>
+  </header>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <table>
+      <tr>
+        <td>
+          <div class="project">
+            <h3>Calculator</h3>
+			<img src="C:\Users\kklak\lakshmi\ppchennai\ppchennai\Lakshmi\images\calculator.jpg" alt="Project 1 Image" style="width:300px;height:400px;">
+            <a href="calculator.html">View Project</a>
+          </div>
+        </td>
+        <td>
+          <div class="project">
+            <h3>Fibonacci Series</h3>
+            <img src="C:\Users\kklak\lakshmi\ppchennai\ppchennai\Lakshmi\images\fibonacci1.jpg" alt="Project 2 Image" style="width:300px;height:400px;">
+            <a href="fibbonacci.html">View Project</a>
+          </div>
+        </td>
+        <td>
+          <div class="project">
+            <h3>Tic Tac Toe</h3>
+            <img src="C:\Users\kklak\lakshmi\ppchennai\ppchennai\Lakshmi\images\tictactoe.jpg" alt="Project 3 Image" style="width:300px;height:400px;">
+            <a href="ttt.html">View Project</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: kklakshmi.08@gmail.com</p>
+  </section>
+
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
+
     header {
       background-color: #333;
       color: #fff;
       padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    h1 {
+
+    .profile-pic img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .profile-info h1 {
       margin: 0;
     }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
     section {
-      padding: 40px;
+      padding: 20px;
     }
-    .about {
-      background-color: #f1f1f1;
+
+    table {
+      width: 100%;
     }
-    .projects {
+
+    td {
+      vertical-align: top;
+      padding: 10px;
+    }
+
+    .project {
       background-color: #fff;
-    }
-    .project-item {
+      padding: 20px;
       margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    h2, h3 {
+      margin-top: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
     }
   </style>
-</head>
-<body>
-  <header>
-    <h1>Welcome to My Blog</h1>
-  </header>
-</body>
-<body>
- <header class="bg-purple text-white py-5">
-    <div class="container text-center">
-      <h1>Lakshmi Karthik</h1>
-      <h2>Front End Web Development Engineer(Web/AI)</h2>
-      <div class="social-icons mt-4">
-        <a href="#" class="fa fa-github"></a>
-        <a href="#" class="fa fa-linkedin"></a>
-        <a href="#" class="fa fa-twitter"></a>
-        <a href="#" class="fa fa-instagram"></a>
-      </div>
-    </div>
-  </header>
-  <section id="about" class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <img src="\Lakshmi\images\profilepic.jpg" alt="Profile Image" class="profile-image">
-        </div>
-        <div class="col-lg-6">
-          <h2>About Me</h2>
-          <p>
-            "Hello!, I'm a Self-motivated web developer ,Passionate about building user-friendly dynamic web applications.Thank you for visiting my profile, and I look forward to connecting with you soon!"
-         </p>
-        </div>
-      </div>
-    </div>
-  </section>
- 
-  <section id="projects">
-  <h2>My Projects</h2>
-  <div class="project">
-    <h3>Calculator</h3>
-    <img id="calculator-img" src="\Lakshmi\images\calculator.jpg" alt="Calculator Image" style="width:300px;height:400px;">
-    <p>My calculator project is a user-friendly tool that performs basic arithmetic operations. <br>It provides a simple interface and accurate calculations to help users with their mathematical needs.</p>
-    <a href="calculator.html">View Project</a>
-  </div>
-  <div class="project">
-    <h3>Fibonacci</h3>
-   	<img src="\Lakshmi\images\fibonacci1.jpg" alt="Fibonacci Image" style="width:300px;height:400px;">
-    <p>The Fibonacci Series code I've developed generates the Fibonacci sequence with precision.<br> It provides a reliable solution for obtaining the sequence up to a given number, allowing users to explore the fascinating patterns of this mathematical sequence.</p>
-    <a href="fibonacci.html">View Project</a>
-  </div>
-  <div class="project">
-    <h3>Tic Tac Toe</h3>
-    <img src="\Lakshmi\images\tictactoe.jpg" alt="Tic Tac Toe Image" style="width:300px;height:400px;">
-    <p>Enjoy playing Tic Tac Toe Game here</p>
-    <a href="ttt.html">View Project</a>
-  </div>
-</section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: kklakshmi.08@gmail.com</p>
-   </section>
-
-  <script src="script.js"></script>
 </body>
 
 </html>
