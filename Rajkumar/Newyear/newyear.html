@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Year Countdown</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fire.css">
+	<script type="text/javascript" src="fire.js"></script>
+	<style>
+		body, html{
+			margin: 0px;
+			height: 100%;
+			background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+			overflow-y: hidden;
+		}
+		.background-image {
+  background-image: url('your-image.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* Adjust the opacity value as desired (0.0 - 1.0) */
+}
+
+		#countdown-container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			font-size: 32px;
+			font-family: Arial, sans-serif;
+		}
+
+		.countdown-element {
+			display: inline-block;
+			background-color: white;
+			width: 150px;
+			font-weight: bold;
+			padding: 20px;
+			color: black;
+			margin: 5px;
+			border-radius: 5px;
+			transition: background-color 0.3s;
+		}
+
+		.countdown-element:hover {
+			background-color: #ad007e;
+			color: white;
+			cursor: pointer;
+		}
+
+		.countdown-element span {
+			font-size: 48px;
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		.light {
+			color: white;
+			text-shadow: 0 0 10px #db34c9,
+               0 0 20px #db34c9,
+               0 0 30px #db34c9,
+               0 0 40px #2980B9,
+               0 0 70px #2980B9,
+               0 0 80px #2980B9,
+               0 0 100px #2980B9,
+               0 0 150px #2980B9;
+	font-size: 3rem;
+    font-weight: 400;
+		}
+		
+		.year {
+		color: white;
+    
+	text-shadow: 0 0 10px #da3865,
+               0 0 20px #da3865,
+               0 0 30px #da3865,
+               0 0 40px #c01029,
+               0 0 70px #c01029,
+               0 0 80px #c01029,
+               0 0 100px #c01029,
+               0 0 150px #c01029;
+	font-size: 15rem;
+    font-weight: 900;
+    line-height: 1.5;
+			   }
+}
+	</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div id="countdown-container">
+	<h1 class="light">Countdown to New Year</h1>
+	<h1 class="year">2024</h1>
+	<div class="countdown-element">
+		<span id="days">0</span> days
+	</div>
+	<div class="countdown-element">
+		<span id="hours">0</span> hours
+	</div>
+	<div class="countdown-element">
+		<span id="minutes">0</span> minutes
+	</div>
+	<div class="countdown-element">
+		<span id="seconds">0</span> seconds
+	</div>
+</div>
+
+<script>
+	
+</script>
+</body>
+</html>
