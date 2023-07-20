@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <style>
+    body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-image: url('https://th.bing.com/th/id/OIP.PQRWbM58w6mo-OS1PK4mVwAAAA?w=291&h=180&c=7&r=0&o=5&pid=1.7'); /* Add your image URL here */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .board {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            border: 10px solid #ec2c2c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        
+        .board {
+            display:inline-table;
+        }
+        
+        .cell {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+
+    <div class="board">
+        <div class="cell" onclick="makeMove(0, 0)"></div>
+        <div class="cell" onclick="makeMove(0, 1)"></div>
+        <div class="cell" onclick="makeMove(0, 2)"></div>
+        <div class="cell" onclick="makeMove(1, 0)"></div>
+        <div class="cell" onclick="makeMove(1, 1)"></div>
+        <div class="cell" onclick="makeMove(1, 2)"></div>
+        <div class="cell" onclick="makeMove(2, 0)"></div>
+        <div class="cell" onclick="makeMove(2, 1)"></div>
+        <div class="cell" onclick="makeMove(2, 2)"></div>
+    </div>
+
+    <script>
+        var currentPlayer = 'X';
+        var board = [
+            ['', '', ''],
+            ['', '', ''],
+            ['', '', '']
+        ];
+
+        function makeMove(row, col) {
+            if (board[row][col] === '') {
+                board[row][col] = currentPlayer;
+                document.getElementsByClassName('cell')[row * 3 + col].innerText = currentPlayer;
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+
+                var winner = checkWinner();
+                if (winner) {
+                    alert('Player ' + winner + ' wins!');
+                    resetGame();
+                } else if (isBoardFull()) {
+                    alert('It\'s a tie!');
+                    resetGame();
+                }
+            }
+        }
+
+        function checkWinner() {
+            // Check rows
+            for (var i = 0; i < 3; i++) {
+                if (board[i][0] !== '' && board[i][0] === board[i][1] && board[i][0] === board[i][2]) {
+                    return board[i][0];
+                }
+            }
+
+            // Check columns
+            for (var j = 0; j < 3; j++) {
+                if (board[0][j] !== '' && board[0][j] === board[1][j] && board[0][j] === board[2][j]) {
+                    return board[0][j];
+                }
+            }
+
+            // Check diagonals
+            if (board[0][0] !== '' && board[0][0] === board[1][1] && board[0][0] === board[2][2]) {
+                return board[0][0];
+            }
+            if (board[0][2] !== '' && board[0][2] === board[1][1] && board[0][2] === board[2][0]) {
+                return board[0][2];
+            }
+
+            return null;
+        }
+
+        function isBoardFull() {
+            for (var row = 0; row < 3; row++) {
+                for (var col = 0; col < 3; col++) {
+                    if (board[row][col] === '') {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function resetGame() {
+            currentPlayer = 'X';
+            board = [
+                ['', '', ''],
+                ['', '', ''],
+                ['', '', '']
+            ];
+            var cells = document.getElementsByClassName('cell');
+            for (var i = 0; i < cells.length; i++) {
+                cells[i].innerText = '';
+            }
+        }
+    </script>
+</body>
+</html>

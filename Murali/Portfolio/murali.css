@@ -1,0 +1,163 @@
+/* styles.css */
+
+/* Reset default browser styles */
+:root{
+    --blue:#002f7b;
+    --green:#afeb8f;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Basic styles */
+  body {
+    font-family: 'Sen', sans-serif;
+    line-height: 1.6;
+    background-color: #f1f1f1;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header */
+  header {
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .brand{
+    font-size: 50px;
+  }
+  .profilepic{
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+  }
+  .profilepic:hover{
+    transform: scale(1.1);
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .nav-links li {
+    margin-right: 10px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Hero Section */
+  #hero {
+    background-color: #002f7b;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #afeb8f;
+  }
+  
+  .hero-text {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: var(--blue);
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  /* About Section */
+  #about {
+    background-color: #fff;
+    padding: 40px;
+  }
+  
+  /* Projects Section */
+  #projects {
+    background-color: var(--green);
+    padding: 40px;
+    
+  }
+  
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .project {
+    width: calc(50% - 20px);
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    
+  }
+  .project:hover{
+    transform:scale(1.02);
+   
+  }
+  
+  .project img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .projectlink{
+    text-decoration: none;
+  }
+  
+  /* Contact Section */
+  #contact {
+    background-color: var(--blue);
+    color: var(--green);
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .contact-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: var(--blue);
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--blue);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
