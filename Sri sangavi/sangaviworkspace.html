@@ -7,8 +7,12 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <style>
     body {
-      background-color: #cee3eb;
+      /* Removed the background-color */
       font-family: Arial, sans-serif;
+      font-size: large;
+      background-color: rgb(160, 191, 206);
+      /* Added margin to create space from the edges */
+      margin: 0;
     }
 
     .profile-image {
@@ -38,46 +42,38 @@
     }
 
     .link-container {
-      display:inline-flex;
+      display: inline-flex;
       justify-content: center;
       margin-top: 200px;
     }
 
-    .link-container a {
-      display: inline-block;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: #75acf3;
-      color: #ffffff;
-      text-align:center;
-      line-height: 100px;
-      margin-right: 100px;
-      animation: zoom-in 0.5s;
-    }
-
-    .link-container a:last-child {
-      margin-right: 0;
-    }
-
     .projects-title {
-      font-size: 24px;
+      font-size: 30px;
+    
       font-weight: bold;
       margin-top: 30px;
+    
+    
+      color: black;
+      padding: 40px 0;
+    }
+
+    .project-image-container {
+      text-align: center; /* Center the project icon and name */
+      margin-bottom: 10px; /* Add spacing between projects */
     }
 
     .project-image {
       width: 100px;
       height: 100px;
       object-fit: cover;
-      border-radius: 50%;
-      margin-top: 10px;
       cursor: pointer;
     }
 
     .project-name {
       margin-top: 5px;
       text-align: center;
+      font-weight: bold;
     }
 
     @keyframes zoom-in {
@@ -91,67 +87,109 @@
   </style>
 </head>
 <body>
-  <header class="bg-purple text-white py-5">
+  <header class="bg-purple text-black py-5">
     <div class="container text-center">
-      <h1>My Workspace</h1>
-      
+      <div style="text-decoration: color-mix(in hwb shorter hue,  percentage, color percentage);"></div>
+      <h1><b> My personal blog</b></h1>
+
       <div class="social-icons mt-4">
-        <a href="#" class="fa fa-github"></a>
         <a href="#" class="fa fa-linkedin"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-instagram"></a>
       </div>
     </div>
   </header>
-  <section id="about" class="py-5">
+  <section id="about" class="bg-blue py-5"> <!-- Add background color for the personal blog section -->
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
           <img src="https://media.licdn.com/dms/image/D5603AQHYwmh_j4DfaQ/profile-displayphoto-shrink_200_200/0/1688108404019?e=1694649600&v=beta&t=PwNxYST96wd2hgnrjGM9DYWql85nOMW0HfCQMNDTvAs" alt="Profile Image" class="profile-image">
         </div>
         <div class="col-lg-6">
-          <h2 class="title"><b>  About Me</b></h2>
+          <h2 class="title"><b><strong>ABOUT ME</strong></b></h2>
           <p class="description">
-            Hi there! I'm Sri Sangavi, and I'm excited to tell you a bit about myself. I have a strong passion for tecnologies , which has been a driving force in my life. It fuels my creativity and motivates me to constantly explore new ideas.I believe in the power of personal growth and continuous learning. That's why I'm always seeking opportunities to expand my knowledge and develop new skills.<br><strong> Front end developer web/AI - Pepper Programing</strong><br><strong>BSC.Information Tecnology</strong>
+            Hello! I am Sri Sangavi an aspiring IT professional, eager to make my mark in the dynamic and ever-expanding world of
+technology. I have recently graduated with a degree in IT, and I am excited to apply my knowledge, passion,
+and enthusiasm to contribute positively to the IT industry. With a strong foundation in various IT concepts
+and a willingness to learn, I am ready to take on new challenges and grow as a skilled professional.<br><strong>Front-end developer web/AI - Pepper Programming</strong><br><strong>BSc. Information Technology</strong>
           </p>
-          <div class="link-container">
-            <a href="https://drive.google.com/file/d/1d3qujkfhiRJf0hOUy4GmtgHkpoIyTJlh/view?usp=drivesdk">CV</a>
-            <a href="https://www.linkedin.com/in/sri-sangavi-s-m-02b022259/">LinkedIn</a>
-          </div>
         </div>
       </div>
     </div>
   </section>
-  <section id="projects" class="bg-light py-5">
+  <header>
+    <style>
+      /* ... Existing styles ... */
+    
+      /* Add styles for the download section */
+      #download {
+        color: #fff; /* White text color */
+      }
+    
+      /* Add styles for the download buttons */
+      .btn {
+        padding: 12px 24px;
+        font-size: 18px;
+        border-radius: 5px;
+      }
+    
+      .btn-primary {
+        background-color: #4CAF50;
+        border-color: #4CAF50;
+      }
+    
+      .btn-primary:hover {
+        background-color: #45a049;
+        border-color: #45a049;
+      }
+    </style>
+    
+  </header>
+  <body>
+    <section id="download" class="bg-blue py-5"> <!-- Add background color for the download section -->
+      <div class="container text-center">
+        <a href="https://drive.google.com/drive/folders/1b4wgnKIKhbb0Q48xm2INil6PykQLnidE" download class="btn btn-primary mr-4">Download CV</a>
+        <a href="https://drive.google.com/drive/folders/18oeEr6CD7IZmBRFVJmt2scJN64ZAtROK" download class="btn btn-primary">Download Cover Letter</a>
+      </div>
+    </section>
+    
+  </body>
+  <section id="projects" class="bg-blue py-5"> <!-- Add background color for the project section -->
     <div class="container">
-      <h2 class="text-center mb-5 projects-title">Projects</h2>
+      <h2 class="text-center mb-5 projects-title"><strong>PROJECTS</strong></h2>
       <div class="row" id="project-container">
-        <div class="col-lg-4" onclick="openInNewTab('sangavi_calculator.html')">
-          <img src="https://th.bing.com/th/id/OIP.tUOu46bWpcRmAVGgRh0XQQHaHa?w=169&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 1" class="project-image">
-          <p class="project-name">Calculator</p>
+        <div class="col-lg-4">
+          <div class="project-image-container" onclick="openInNewTab('sangavi_calculator.html')">
+            <img src="https://th.bing.com/th/id/OIP.vDMDxD761dhu9sVhbnDUGAHaLf?w=126&h=196&c=7&r=0&o=5&pid=1.7" alt="Project 1" class="project-image">
+            <p class="project-name">Calculator</p>
+          </div>
         </div>
-        <div class="col-lg-4" onclick="openInNewTab('sangavijstask.html')">
-          <img src="https://th.bing.com/th/id/OIP.-aXkaSfIXcxAk8z8J8ZijgHaGF?w=216&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 2" class="project-image">
-          <p class="project-name">Fibonacci Series</p>
+        <div class="col-lg-4">
+          <div class="project-image-container" onclick="openInNewTab('sangavijstask.html')">
+            <img src="https://th.bing.com/th/id/OIP.-aXkaSfIXcxAk8z8J8ZijgHaGF?w=216&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 2" class="project-image">
+            <p class="project-name">Fibonacci Series</p>
+          </div>
         </div>
-        <div class="col-lg-4" onclick="openInNewTab('sangavitictactoe.html')">
-          <img src="https://th.bing.com/th/id/OIP.z34ARszvRncdJMfoV5Lv3QHaHa?w=161&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 3" class="project-image">
-          <p class="project-name">Tic Tac Toe</p>
+        <div class="col-lg-4">
+          <div class="project-image-container" onclick="openInNewTab('sangavitictactoe.html')">
+            <img src="https://th.bing.com/th/id/OIP.z34ARszvRncdJMfoV5Lv3QHaHa?w=161&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 3" class="project-image">
+            <p class="project-name">Tic Tac Toe</p>
+          </div>
         </div>
-        <div class="col-lg-4" onclick="openInNewTab('sangavi_2024.html')">
-          <img src="https://th.bing.com/th/id/OIP.fMrAKIzfokv7SqobTv1VOgAAAA?w=186&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 3" class="project-image">
-          <p class="project-name"> New Year countdown </p>
+        <div class="col-lg-4">
+          <div class="project-image-container" onclick="openInNewTab('sangavi_2024.html')">
+            <img src="https://th.bing.com/th/id/OIP.fMrAKIzfokv7SqobTv1VOgAAAA?w=186&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 4" class="project-image">
+            <p class="project-name">New Year countdown</p>
+          </div>
         </div>
-
       </div>
     </div>
     <div class="social-icons mt-4">
-  <a href="#" class="fa fa-github"></a>
-  <a href="#" class="fa fa-twitter"></a>
-  <a href="#" class="fa fa-linkedin"></a>
-  <a href="#" class="fa fa-instagram"></a>
-</div>
-
+      <a href="#" class="fa fa-github"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-instagram"></a>
+    </div>
   </section>
   <footer class="bg-purple text-white py-3">
     <div class="container text-center">
