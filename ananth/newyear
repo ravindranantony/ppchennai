@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Year 2024 Countdown</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fire.css">
+    <script type="text/javascript" src="fire.js"></script>
+    <style>
+        body, html {
+            margin: 0px;
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            overflow-y: hidden;
+            font-family: 'Arial', sans-serif; /* Change the font family */
+        }
+
+        .background-image {
+            background-image: url('your-image.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5; /* Adjust the opacity value as desired (0.0 - 1.0) */
+        }
+
+        #countdown-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .countdown-element {
+            display: inline-block;
+            background-color: white;
+            width: 150px;
+            font-weight: bold;
+            padding: 20px;
+            color: black;
+            margin: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .countdown-element:hover {
+            background-color: #ad007e;
+            color: white;
+            cursor: pointer;
+        }
+
+        .countdown-element span {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .light {
+            color: #FFD700; /* Change the color to gold */
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700,
+                         0 0 30px #FFD700, 0 0 40px #FFD700,
+                         0 0 70px #FFD700, 0 0 80px #FFD700,
+                         0 0 100px #FFD700, 0 0 150px #FFD700;
+            font-size: 3rem;
+            font-weight: 700; /* Increase the font weight for emphasis */
+        }
+
+        .year {
+            color: #FF1493; /* Change the color to pink */
+            text-shadow: 0 0 10px #FF1493, 0 0 20px #FF1493,
+                         0 0 30px #FF1493, 0 0 40px #FF1493,
+                         0 0 70px #FF1493, 0 0 80px #FF1493,
+                         0 0 100px #FF1493, 0 0 150px #FF1493;
+            font-size: 15rem;
+            font-weight: 900;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div id="countdown-container">
+    <h1 class="light">Countdown to New Year</h1>
+    <h1 class="year">2024</h1>
+    <div class="countdown-element">
+        <span id="days">0</span> days
+    </div>
+    <div class="countdown-element">
+        <span id="hours">0</span> hours
+    </div>
+    <div class="countdown-element">
+        <span id="minutes">0</span> minutes
+    </div>
+    <div class="countdown-element">
+        <span id="seconds">0</span> seconds
+    </div>
+</div>
+
+<script>
+    // JavaScript code for countdown functionality
+    const countdownDate = new Date("2024-01-01T00:00:00").getTime();
+
+    const countdownInterval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById("days").innerText = "0";
+            document.getElementById("hours").innerText = "0";
+            document.getElementById("minutes").innerText = "0";
+            document.getElementById("seconds").innerText = "0";
+        }
+    }, 1000);
+</script>
+</body>
+</html>
