@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+  <style>
+    /* Add some basic styling for the calculator */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .calculator {
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      border: 1px solid #3a3535;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    button {
+      width: 40px;
+      height: 40px;
+      font-size: 25px;
+      margin: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="display" readonly>
+    <br>
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="appendToDisplay('/')">/</button>
+    <button onclick="appendToDisplay('*')">*</button>
+    <button onclick="appendToDisplay('-')">-</button>
+    <br>
+    <button onclick="appendToDisplay('7')">7</button>
+    <button onclick="appendToDisplay('8')">8</button>
+    <button onclick="appendToDisplay('9')">9</button>
+    <button onclick="appendToDisplay('+')">+</button>
+    <br>
+    <button onclick="appendToDisplay('4')">4</button>
+    <button onclick="appendToDisplay('5')">5</button>
+    <button onclick="appendToDisplay('6')">6</button>
+    <button rowspan="2" onclick="calculate()">=</button>
+    <br>
+    <button onclick="appendToDisplay('1')">1</button>
+    <button onclick="appendToDisplay('2')">2</button>
+    <button onclick="appendToDisplay('3')">3</button>
+    <br>
+    <button colspan="2" onclick="appendToDisplay('0')">0</button>
+    <button onclick="appendToDisplay('.')">.</button>
+  </div>
+
+  <script>
+    // JavaScript functions for calculator functionality
+    function appendToDisplay(value) {
+      document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+      let expression = document.getElementById('display').value;
+      try {
+        // Use eval to evaluate the mathematical expression (Not recommended for production code)
+        document.getElementById('display').value = eval(expression);
+      } catch (error) {
+        document.getElementById('display').value = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>
