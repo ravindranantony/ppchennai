@@ -105,10 +105,11 @@
   }
   
   .project {
-    width: calc(50% - 20px);
+    width: 100%;
     background-color: #fff;
     margin-bottom: 20px;
     padding: 20px;
+    transition: all .3s;
     
   }
   .project:hover{
@@ -134,10 +135,10 @@
   
   .contact-form input,
   .contact-form textarea {
-    display: block;
-    width: 100%;
+    display:block;
+    min-width: 30%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 10px auto;
     border: none;
     border-radius: 4px;
   }
