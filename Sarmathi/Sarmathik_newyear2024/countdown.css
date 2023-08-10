@@ -1,0 +1,132 @@
+:root {
+    --text-color : #f5f9fa;
+    --timer-box-bg : #ad1843;
+    --timer-box-txt-bg : #290404d5;
+    }
+ * {
+   padding : 0;
+   margin : 0;
+   box-sizing: border-box;
+ }  
+ 
+ body{
+    height: 100vh;
+      background-image: url("2024.gif");
+      background-repeat: no-repeat;
+      background-size: cover;
+    color: var(--text-color);
+    font-family:'Poppins',sans-serif ;
+ }
+
+ .fireworks-container{
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-position: bottom left;
+   background-size: cover;
+   background-repeat: no-repeat;
+ }
+
+ .content-wrapper {
+  z-index: 99;
+  position: absolute;
+  left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .header{
+    font-size: 3rem;
+    font-weight: 300;
+ }
+ 
+ .year{
+    font-size: 10rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+ }
+
+ .timer{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+ .timer > * ~ * {
+    margin-left: 4rem;
+ }
+
+ .timer-box {
+    background-color: var(--timer-box-bg);
+ }
+
+ .timer-box__count{
+    --size:10rem;
+    width: var(--size);
+    height: var(--size);
+    display: grid;
+    place-items: center;
+ }
+ .timer-box__count >span {
+    font-size: 5rem;
+    font-weight: 500;
+ }
+
+ .timer-box__text{
+    display: grid;
+    place-items: center;
+    background-color: var(--timer-box-txt-bg);
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+ }
+ 
+ @media only screen and (max-width: 1200px) {
+    html {
+        font-size: 60%;
+    }
+ }
+
+ @media only screen and (max-width: 700px) {
+    html {
+        font-size: 40%;
+    }
+ }
+
+ /*basic styles for black background and crosshair cursor*/
+
+   
+
+ h1{
+   pointer-events: none;
+  font-size: 72px;
+   
+   background-color: rgb(50, 162, 236);
+   -webkit-background-clip: text;
+    background-clip:text;
+   -webkit-text-fill-color: transparent;
+ }
+ #message{
+ width: 100%;
+ font-size: 2em;
+ color: rgb(59, 235, 15);
+ text-align: center;
+ position: absolute;
+ top:25px;
+ left: 0;
+ }
+ canvas{
+   cursor: crosshair;
+   display: block;
+ }
+ 
+
+

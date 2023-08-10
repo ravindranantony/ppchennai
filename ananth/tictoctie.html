@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #board {
+      display: flex;
+      flex-wrap: wrap;
+      width: 330px;
+      border: 5px solid #333;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      background-color: #f0f0f0;
+    }
+
+    .cell {
+      flex: 0 0 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: #333;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .cell:hover {
+      background-color: #e0e0e0;
+    }
+
+    .highlight {
+      background-color: #88ff88 !important;
+    }
+
+    #status {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="board" onclick="handleMove(event)">
+    <div class="cell" data-index="0"></div>
+    <div class="cell" data-index="1"></div>
+    <div class="cell" data-index="2"></div>
+    <div class="cell" data-index="3"></div>
+    <div class="cell" data-index="4"></div>
+    <div class="cell" data-index="5"></div>
+    <div class="cell" data-index="6"></div>
+    <div class="cell" data-index="7"></div>
+    <div class="cell" data-index="8"></div>
+  </div>
+  <div id="status">Player X's Turn</div>
+
+  <script>
+    let currentPlayer = 'X';
+    const cells = document.querySelectorAll('.cell');
+    const winningCombinations = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+
+    function checkWinner() {
+      for (const combo of winningCombinations) {
+        const [a, b, c] = combo;
+        if (
+          cells[a].textContent &&
+          cells[a].textContent === cells[b].textContent &&
+          cells[a].textContent === cells[c].textContent
+        ) {
+          cells[a].classList.add('highlight');
+          cells[b].classList.add('highlight');
+          cells[c].classList.add('highlight');
+          document.getElementById('status').textContent = `${currentPlayer} wins!`;
+          return true;
+        }
+      }
+      if ([...cells].every((cell) => cell.textContent)) {
+        document.getElementById('status').textContent = "It's a draw!";
+        return true;
+      }
+      return false;
+    }
+
+    function handleMove(event) {
+      const cell = event.target;
+      if (!cell.textContent) {
+        cell.textContent = currentPlayer;
+        if (!checkWinner()) {
+          currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+          document.getElementById('status').textContent = `Player ${currentPlayer}'s Turn`;
+        }
+      }
+    }
+
+    function resetBoard() {
+      cells.forEach((cell) => {
+        cell.textContent = '';
+        cell.classList.remove('highlight');
+      });
+      currentPlayer = 'X';
+      document.getElementById('status').textContent = `Player ${currentPlayer}'s Turn`;
+    }
+  </script>
+</body>
+</html>

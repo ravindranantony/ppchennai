@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Projects Display</title>
+</head>
+<body>
+  <h1>My Projects</h1>
+  <ul id="projectsList"></ul>
+
+  <script>
+    // Sample data for projects
+    const projects = [
+      {
+        title: "CALCULATOR",
+        description: "A calculator is a device that performs arithmetic operations on numbers. Basic calculators can do only addition, subtraction, multiplication and division mathematical calculations.",
+   thumbnail:"https://www.iconfinder.com/icons/171352/calculator_icon",
+        link:"/Arthi_calander.html"
+      },
+      {
+        title: "FIBONACCI SERIES",
+        description: "The sequence follows the rule that each number is equal to the sum of the preceding two numbers. The Fibonacci sequence begins with the following 14 integers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233 ... Each number, starting with the third, adheres to the prescribed formula.",
+        thumbnail:"https://clevelanddesign.com/wp-content/uploads/2020/09/the-golden-ratio-teaser.jpg",
+        link:"Arthi_fibonacci.html"
+      },
+      {
+        title: "TIC TAC TOE",
+        description: "The game is played on a grid that's 3 squares by 3 squares. You are X , your friend (or the computer in this case) is O . Players take turns putting their marks in empty squares. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner",
+thumbnail:"https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/223/055/datas/gallery.jpg",
+        link:"Arthi_tic_tac_toe.html"
+      },
+    ];
+
+    // Function to display projects on the page
+    function displayProjects() {
+      const projectsList = document.getElementById("projectsList");
+
+      projects.forEach((project) => {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `<strong>${project.title}</strong>: ${project.description}`;
+        projectsList.appendChild(listItem);
+      });
+    }
+
+    // Call the function to display the projects
+    displayProjects();
+  </script>
+</body>
+</html>

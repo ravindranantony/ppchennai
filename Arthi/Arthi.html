@@ -1,102 +1,214 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Calendar</title>
-  <style>
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 
-    th, td {
-      border: 1px solid black;
-      text-align: center;
-      padding: 8px;
-    }
+html {
+  box-sizing: border-box;
+}
 
-    th {
-      background-color: #f2f2f2;
-    }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
-    td {
-      height: 80px;
-    }
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
 
-    .today {
-      background-color: #ffffcc;
-    }
-  </style>
-</head>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style></head>
 <body>
-  <h1>Calendar</h1>
-  <table>
-    <tr>
-      <th colspan="7">July 2023</th>
-    </tr>
-    <tr>
-      <th>Sun</th>
-      <th>Mon</th>
-      <th>Tue</th>
-      <th>Wed</th>
-      <th>Thu</th>
-      <th>Fri</th>
-      <th>Sat</th>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
-      <td>6</td>
-      <td>7</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>10</td>
-      <td>11</td>
-      <td>12</td>
-      <td>13</td>
-      <td>14</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>17</td>
-      <td>18</td>
-      <td>19</td>
-      <td>20</td>
-      <td>21</td>
-      <td>22</td>
-    </tr>
-    <tr>
-      <td>23</td>
-      <td>24</td>
-      <td>25</td>
-      <td>26</td>
-      <td>27</td>
-      <td>28</td>
-      <td>29</td>
-    </tr>
-    <tr>
-      <td>30</td>
-      <td>31</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
+
+<div class="about-section">
+  <h1>ARTHI SIVAKUMAR</h1>
+  <p> Hello, I am Arthi and I am a Full Stack Developer specialized in Web and AI technologies. I completed my Computer
+      Science Engineering. Currently I am learning dutch language now. This is my first opportunity to build my career. To get an opportunity where
+      I can make the best of my potential and contribute to the organization's
+      growth..</p>
+      <center><img
+          src="https://media.licdn.com/dms/image/D4E03AQHGMFnKSDe35A/profile-displayphoto-shrink_800_800/0/1689272119340?e=1694649600&v=beta&t=6Hlw9UR6eBbLyNJwCWiMU8qaHgrl-7Ch9HpPDO5hVqE"
+          alt="Profile Photo"></center>
+</div>
+    
+          <h1>MY PROJECTS</h1>
+          <ol>
+            <li><a href="Arthi_calander.html" class="button">Calculator</a></li>
+            <li><a href="Arthi_fibonacci.html" class="button">Fibonacci Series</a></li>
+            <li><a href="Arthi_tic_tac_toe.html" class="button">TicTacToe Game</a></li>
+            <li><a href="Newyear_Countdown\Newyear.html" class="button">Newyear Countdown</a></li>
+           </ol> <!-- contact section-->
+    <section id="contact">
+        <div class="container mt-3 contactContent">
+            <h1 class="text-center">Contact Me</h1>
+            <div class="row mt-4">
+                <div class="col-lg-6">
+                    
+                    </style>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="my-details">
+                        <p> ARTHI SIVAKUMAR <br /></p>
+                        <p> (+31)681137783<br /></p>
+                        <p>arthisivakumar19@gmail.com@gmail.com<br /></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+           
+     
+<div class="name"><h1 style="background-color:powderblue;">Follow Me</h1></div>
+<!-- Add icon library -->
+<br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Add font awesome icons -->
+<center>
+<a href="https://www.linkedin.com/in/arthi-sivakumar19/" target="_blank" class="fa fa-linkedin"></a>
+<a href="https://twitter.com/Aarthi13515468?t=0eAds6JxuPzp8v2Cu0ZOgw&s=08" target="_blank" class="fa fa-twitter"></a>
+<a href="https://www.instagram.com/arthisivakumar19/?igshid=MzNlNGNkZWQ4Mg%3D%3D"target="_blank" class="fa fa-instagram"></a>  
+<div class="name"><h5 style="background-color:black;color:white;">&copy; 2023 [Arthi]. All rights reserved.</h5></div>     
+    </div>
+  </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

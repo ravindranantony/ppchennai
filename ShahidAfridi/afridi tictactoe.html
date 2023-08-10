@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <style>
+    body {
+      background-color: #a4a2b2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+    
+    .cell {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <div class="cell" onclick="makeMove(0, 0)"></div>
+    <div class="cell" onclick="makeMove(0, 1)"></div>
+    <div class="cell" onclick="makeMove(0, 2)"></div>
+    <div class="cell" onclick="makeMove(1, 0)"></div>
+    <div class="cell" onclick="makeMove(1, 1)"></div>
+    <div class="cell" onclick="makeMove(1, 2)"></div>
+    <div class="cell" onclick="makeMove(2, 0)"></div>
+    <div class="cell" onclick="makeMove(2, 1)"></div>
+    <div class="cell" onclick="makeMove(2, 2)"></div>
+  </div>
+
+  <script>
+    var currentPlayer = 'X';
+    var board = [
+      ['', '', ''],
+      ['', '', ''],
+      ['', '', '']
+    ];
+
+    function makeMove(row, col) {
+      if (board[row][col] === '') {
+        board[row][col] = currentPlayer;
+        document.getElementsByClassName('cell')[row * 3 + col].innerText = currentPlayer;
+        
+        if (checkWin()) {
+          alert(currentPlayer + ' wins!');
+          resetBoard();
+          return;
+        }
+        
+        if (checkTie()) {
+          alert("It's a tie!");
+          resetBoard();
+          return;
+        }
+        
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+      }
+    }
+
+    function checkWin() {
+      for (var i = 0; i < 3; i++) {
+        if (board[i][0] !== '' && board[i][0] === board[i][1] && board[i][1] === board[i][2]) {
+          return true;
+        }
+        
+        if (board[0][i] !== '' && board[0][i] === board[1][i] && board[1][i] === board[2][i]) {
+          return true;
+        }
+      }
+      
+      if (board[0][0] !== '' && board[0][0] === board[1][1] && board[1][1] === board[2][2]) {
+        return true;
+      }
+      
+      if (board[0][2] !== '' && board[0][2] === board[1][1] && board[1][1] === board[2][0]) {
+        return true;
+      }
+      
+      return false;
+    }
+    
+    function checkTie() {
+      for (var row = 0; row < 3; row++) {
+        for (var col = 0; col < 3; col++) {
+          if (board[row][col] === '') {
+            return false;
+          }
+        }
+      }
+      
+      return true;
+    }
+    
+    function resetBoard() {
+      currentPlayer = 'X';
+      board = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+      ];
+
+      var cells = document.getElementsByClassName('cell');
+      for (var i = 0; i < cells.length; i++) {
+        cells[i].innerText = '';
+      }
+    }
+  </script>
+</body>
+</html>
