@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Weather Page</title>
+    <style>
+         body {
+            font-family: "Poppins", sans-serif;	
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+		
+        :root {
+            --white: #ffffff;
+            --off-white: #e5e5e5;
+            --transp-white-1: rgba(255, 255, 255, 0.25);
+            --transp-white-2: rgba(255, 255, 255, 0.1);
+            --blue-1: #62b8f5;
+            --blue-2: #4475ef;
+            --shadow: rgba(3, 46, 87, 0.2);
+        }
+
+        .weather-container {
+            width: 400px;
+            background: var(--transp-white-2);
+            backdrop-filter: blur(10px);
+            padding: 3em 1.8em;
+            border: 2px solid var(--transp-white-2);
+            border-radius: 0.6em;
+            box-shadow: 0 1.8em 3.7em var(--shadow);
+            text-align: center;
+        }
+		
+		
+        .location {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .weather-icon {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .weather-description {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .temperature {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .humidity,
+        .wind-speed {
+            margin-top: 5px;
+            font-size: 18px;
+        }
+
+        .search-container {
+            margin-top: 20px;
+            font-size: 1em;
+            display: grid;
+            grid-template-columns: 9fr 3fr;
+            gap: 1.25em;
+        }
+
+        .search-container input,
+        .search-container button {
+            outline: none;
+            font-size: 1em;
+            border: none;
+        }
+        .search-container input {
+            padding: 0.7em;
+            background-color: transparent;
+            border-bottom: 2px solid var(--transp-white-1);
+            color: var(--black);
+            font-weight: 300;
+        }
+        .search-container input::placeholder {
+            color: var(--off-white);
+        }
+        .search-container input:focus {
+            border-color: var(--white);
+        }
+        .search-container button {
+            color: var(--blue-2);
+            background-color: var(--white);
+            border-radius: 0.3em;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* Weather background images */
+        .weather-default {
+            background-image: url('/weather/default.jpg');	
+            height: 100%;
+            background-position: fill;
+            background-repeat: no-repeat;
+            background-size: cover;			
+        }
+
+        .weather-rainy {
+            background-image: url('/weather/rainy.jpg');
+            height: 100%;
+            background-position: fill;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .weather-snowy {
+            background-image: url('/weather/snowy.jpg');
+            height: 100%;
+            background-position: fill;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .weather-stormy {
+            background-image: url('/weather/stormy.jpg');
+            height: 100%;
+            background-position: fill;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .weather-cloudy {
+            background-image: url('/weather/cloudy.jpg');
+            height: 100%;
+            background-position: fill;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .weather-clear {
+            background-image: url('/weather/clear.jpg');
+            height: 100%;
+            background-position: fill;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Additional styles based on weather conditions */
+        /* Add more weather conditions and their corresponding background images as needed */
+
+    </style>
+</head>
+<body class="weather-default">
+    <div class="weather-container">
+        <div class="location">
+            City Name
+        </div>
+
+        <img class="weather-icon" src="https://openweathermap.org/img/w/01d.png" alt="Weather Icon">
+        <div class="weather-description">None</div>
+        <div class="temperature">00°C</div>
+        <div class="humidity">Humidity: 00%</div>
+        <div class="wind-speed">Wind Speed: 00 m/s</div>
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search for a city...">
+            <button class="search-btn">Search</button>
+        </div>
+
+        <script>
+            async function getWeatherData(city) {
+                const apiKey = '4af15f9107d919cb2bd6824f43b8d656'; // Replace with your actual API key.
+                const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+                try {
+                    const response = await fetch(apiURL);
+                    const data = await response.json();
+
+                    // Process the API response data and extract the required weather information.
+                    const weatherData = {
+                        location: data.name,
+                        temperature: data.main.temp,
+                        description: data.weather[0].description,
+                        icon: data.weather[0].icon,
+                        humidity: data.main.humidity,
+                        windSpeed: data.wind.speed
+                    };
+
+                    updateWeatherUI(weatherData);
+                } catch (error) {
+                    console.error('Error fetching weather data:', error);
+                }
+            }
+
+            function updateWeatherUI(weatherData) {
+                const locationElement = document.querySelector('.location');
+                const weatherIconElement = document.querySelector('.weather-icon');
+                const weatherDescriptionElement = document.querySelector('.weather-description');
+                const temperatureElement = document.querySelector('.temperature');
+                const humidityElement = document.querySelector('.humidity');
+                const windSpeedElement = document.querySelector('.wind-speed');
+
+                locationElement.textContent = weatherData.location;
+                weatherIconElement.src = `https://openweathermap.org/img/w/${weatherData.icon}.png`;
+                weatherDescriptionElement.textContent = weatherData.description;
+                temperatureElement.textContent = `${weatherData.temperature}°C`;
+                humidityElement.textContent = `Humidity: ${weatherData.humidity}%`;
+                windSpeedElement.textContent = `Wind Speed: ${weatherData.windSpeed} m/s`;
+
+                // Update background image based on weather conditions
+                const bodyElement = document.body;
+                bodyElement.className = `weather-${getWeatherCondition(weatherData.icon)}`;
+            }
+
+            function getWeatherCondition(iconCode) {
+                if (iconCode.includes('01')) {
+                    return 'clear';
+                } else if (iconCode.includes('02') || iconCode.includes('03') || iconCode.includes('04')) {
+                    return 'cloudy';
+                } else if (iconCode.includes('09') || iconCode.includes('10') || iconCode.includes('11')) {
+                    return 'rainy';
+                } else if (iconCode.includes('13')) {
+                    return 'snowy';
+                } else if (iconCode.includes('50')) {
+                    return 'misty';
+                } else if (iconCode.includes('15') || iconCode.includes('16')) {
+                    return 'stormy';
+                } else {
+                    return 'default';
+                }
+            }
+
+            function initWeatherApp() {
+                const searchInput = document.querySelector('.search-input');
+                const searchBtn = document.querySelector('.search-btn');
+
+                searchBtn.addEventListener('click', () => {
+                    const enteredCity = searchInput.value.trim();
+                    getWeatherData(enteredCity);
+                });
+
+                // Function to get user's location and fetch weather data
+                function getUserLocation() {
+                    if ("geolocation" in navigator) {
+                        navigator.geolocation.getCurrentPosition(async position => {
+                            const latitude = position.coords.latitude;
+                            const longitude = position.coords.longitude;
+                            const apiKey = '4af15f9107d919cb2bd6824f43b8d656'; // Replace with your actual API key.
+                            const apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+                            try {
+                                const response = await fetch(apiURL);
+                                const data = await response.json();
+
+                                const weatherData = {
+                                    location: data.name,
+                                    temperature: data.main.temp,
+                                    description: data.weather[0].description,
+                                    icon: data.weather[0].icon,
+                                    humidity: data.main.humidity,
+                                    windSpeed: data.wind.speed
+                                };
+
+                                updateWeatherUI(weatherData);
+                            } catch (error) {
+                                console.error('Error fetching weather data:', error);
+                            }
+                        });
+                    }
+                }
+
+                // Initialize the weather app with user's location data
+                getUserLocation();
+            }
+
+            // Start the weather app after the DOM has loaded.
+            document.addEventListener('DOMContentLoaded', initWeatherApp);
+        </script>
+    </div>
+</body>
+</html>
