@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link rel="stylesheet" href="stylewe.css">
+    <style>
+        body{
+            background-image: url('clouds.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        <h1>Weather Forecast App</h1>
+        <input type="text" id="city" placeholder="Enter city name">
+        <button onclick="getWeather()">Get Weather</button>
+        <div id="weather-info"></div>
+    </div>
+    <script src="weatherjs.js"></script>
+</body>
+</html>
+
+
