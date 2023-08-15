@@ -1,48 +1,217 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Projects Display</title>
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style></head>
 <body>
-  <h1>My Projects</h1>
-  <ul id="projectsList"></ul>
 
-  <script>
-    // Sample data for projects
-    const projects = [
-      {
-        title: "CALCULATOR",
-        description: "A calculator is a device that performs arithmetic operations on numbers. Basic calculators can do only addition, subtraction, multiplication and division mathematical calculations.",
-   thumbnail:"https://www.iconfinder.com/icons/171352/calculator_icon",
-        link:"/Arthi_calander.html"
-      },
-      {
-        title: "FIBONACCI SERIES",
-        description: "The sequence follows the rule that each number is equal to the sum of the preceding two numbers. The Fibonacci sequence begins with the following 14 integers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233 ... Each number, starting with the third, adheres to the prescribed formula.",
-        thumbnail:"https://clevelanddesign.com/wp-content/uploads/2020/09/the-golden-ratio-teaser.jpg",
-        link:"Arthi_fibonacci.html"
-      },
-      {
-        title: "TIC TAC TOE",
-        description: "The game is played on a grid that's 3 squares by 3 squares. You are X , your friend (or the computer in this case) is O . Players take turns putting their marks in empty squares. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner",
-thumbnail:"https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/223/055/datas/gallery.jpg",
-        link:"Arthi_tic_tac_toe.html"
-      },
-    ];
+<div class="about-section">
+  <h1>ARTHI SIVAKUMAR</h1>
+   <h2>Front End Web Developer <span>(Web/AI)</span></h2>
+  <p> Hello, I am Arthi and I am a Full Stack Developer specialized in Web and AI technologies. I completed my Computer
+      Science Engineering. Currently I am learning dutch language now. This is my first opportunity to build my career. To get an opportunity where
+      I can make the best of my potential and contribute to the organization's
+      growth.</p>
+      <center><img src="https://media.licdn.com/dms/image/D4E03AQHGMFnKSDe35A/profile-displayphoto-shrink_800_800/0/1689272119340?e=1694649600&v=beta&t=6Hlw9UR6eBbLyNJwCWiMU8qaHgrl-7Ch9HpPDO5hVqE"
+          alt="Profile Photo"></center>
+</div>
+<section id="projects">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="Images/Calculator.jpg" class="card-img-center" alt="Project 1">
+            <div class="card-body">
+              <h5 class="card-title">Calculator</h5>
+              <p class="card-text">My calculator project is a user-friendly tool that performs basic arithmetic operations. It provides a simple interface and accurate calculations to help users with their mathematical needs.</p>
+              <a href="Arthi_calc.html" class="btn btn-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="Images/fibo.jpg" class="card-img-center" alt="Project 2">
+            <div class="card-body">
+              <h5 class="card-title">Fibonacci Series</h5>
+              <p class="card-text">The Fibonacci Series code I've developed generates the Fibonacci sequence with precision. It provides a reliable solution for obtaining the sequence up to a given number, allowing users to explore the fascinating patterns of this mathematical sequence.</p>
+              <a href="Arthi_fibonacci.html" class="btn btn-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="Images/Tic.jpg" class="card-img-center" alt="Project 3">
+            <div class="card-body">
+              <h5 class="card-title">Tic Tak Toe</h5>
+              <p class="card-text">Tic Tac Toe code: A 3x3 grid game where two players take turns marking symbols ("X" and "O") to get three in a row horizontally, vertically, or diagonally. It's a fun and strategic challenge.</p>
+              <a href="Arthi_tic_tac_toe.html" class="btn btn-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="Images/Newyear.jpg" class="card-img-center" alt="Project 4">
+            <div class="card-body">
+              <h5 class="card-title">New Year Count 2024</h5>
+              <p class="card-text">Experience New Year Count 2024, a captivating project that offers a visually stunning countdown to the New Year. Featuring a dynamic timer, vibrant firecracker-filled sky, and festive explosion sound, it brings the excitement of celebration right to your screen. Celebrate in style with this immersive experience.</p>
+              <a href="Newyear_Countdown\Newyear.html" class="btn btn-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+   <!-- contact section-->
+    <section id="contact">
+        <div class="container mt-3 contactContent">
+            <h1 class="text-center">Contact Me</h1>
+            <div class="row mt-4">
+                <div class="col-lg-6">
+                    
+                    </style>
+                </div>
 
-    // Function to display projects on the page
-    function displayProjects() {
-      const projectsList = document.getElementById("projectsList");
+                <div class="col-lg-6">
+                    <div class="my-details">
+                        <p> ARTHI SIVAKUMAR <br /></p>
+                        <p> (+31)681137783<br /></p>
+                        <p>arthisivakumar19@gmail.com@gmail.com<br /></p>
+                    </div>
+                </div>
 
-      projects.forEach((project) => {
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `<strong>${project.title}</strong>: ${project.description}`;
-        projectsList.appendChild(listItem);
-      });
-    }
-
-    // Call the function to display the projects
-    displayProjects();
-  </script>
+            </div>
+        </div>
+           
+     
+<div class="name"><h1 style="background-color:powderblue;">Follow Me</h1></div>
+<!-- Add icon library -->
+<br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Add font awesome icons -->
+<center>
+<a href="https://www.linkedin.com/in/arthi-sivakumar19/" target="_blank" class="fa fa-linkedin"></a>
+<a href="https://twitter.com/Aarthi13515468?t=0eAds6JxuPzp8v2Cu0ZOgw&s=08" target="_blank" class="fa fa-twitter"></a>
+<a href="https://www.instagram.com/arthisivakumar19/?igshid=MzNlNGNkZWQ4Mg%3D%3D"target="_blank" class="fa fa-instagram"></a>  
+<div class="name"><h5 style="background-color:black;color:white;">&copy; 2023 [Arthi]. All rights reserved.</h5></div>     
+    </div>
+  </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
