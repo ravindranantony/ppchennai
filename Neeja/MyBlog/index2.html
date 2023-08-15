@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style for the header */
+        header {
+            background-color: #f8f9fa;
+            padding: 100px 0;
+        }
+
+        /* Style for the about section */
+        #about {
+            background-color: #ffffff;
+            padding: 100px 0;
+        }
+
+        /* Style for the projects section */
+        #projects {
+            padding: 100px 0;
+        }
+
+        /* Style for project cards */
+        .project-card {
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Style for navigation links */
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for active navigation link */
+        .navbar .nav-link.active {
+            font-weight: bold;
+        }
+
+        /* Centered text */
+        .text-center {
+            text-align: center;
+        }
+
+        /* Responsive image */
+        .img-responsive {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Add your custom styles for colors, fonts, etc. here */
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">NEEJA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center py-5">
+        <div class="container">
+            <img class="rounded-circle mb-3" src="/images/neeja.jpg" alt="Profile Photo" width="150">
+            <h1>Full Stack Developer web/AI</h1>
+            <p>Welcome to my portfolio website. Check out my projects and learn more about me!</p>
+        </div>
+    </header>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">About Me</h2>
+            <p>"Hello there! I'm Neeja, and I'm delighted to have you stop by. I'm a Full stack Engineer web/AI. As a curious soul, I find joy in exploring new ideas, connecting with diverse perspectives, and embracing the beauty of continuous learning. One of my greatest strengths is One of my notable qualities is my adaptability. I thrive in dynamic environments and embrace change as an opportunity for growth. Whether it's facing new challenges or adjusting to different circumstances, I am quick to adapt, remaining flexible and open-minded
+
+                Thank you for visiting my profile, and I look forward to connecting with you soon!"</p>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Projects</h2>
+            <div class="row" id="project-cards">
+                <!-- Project cards will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sample array of projects (you can add more projects here)
+        const projects = [
+            {
+                title: "Project 1",
+                description: "Description of Project 1",
+                imageUrl: "project1.jpg",
+                link: "#"
+            },
+            {
+                title: "Project 2",
+                description: "Description of Project 2",
+                imageUrl: "project2.jpg",
+                link: "#"
+            },
+            {
+                title: "Project 3",
+                description: "Description of Project 3",
+                imageUrl: "project3.jpg",
+                link: "#"
+            }
+            // Add more projects as needed
+        ];
+
+        // Function to generate project cards
+        function generateProjectCards() {
+            const projectCardsContainer = document.getElementById('project-cards');
+
+            projects.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.classList.add('col-md-4', 'project-card');
+
+                projectCard.innerHTML = `
+                    <div class="card">
+                        <img src="${project.imageUrl}" class="card-img-top img-responsive" alt="${project.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${project.title}</h5>
+                            <p class="card-text">${project.description}</p>
+                            <a href="${project.link}" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                `;
+
+                projectCardsContainer.appendChild(projectCard);
+            });
+        }
+
+        // Call the function to generate project cards
+        generateProjectCards();
+    </script>
+</body>
+</html>
