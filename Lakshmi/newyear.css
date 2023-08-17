@@ -1,0 +1,27 @@
+body {
+    background-image: url("/Lakshmi/images/newyear.jpg");
+    background-position: center;
+  
+    background-repeat: no-repeat;
+    color: rgba(240, 240, 240, 0.8);
+    font-family: "Josefin Sans", sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title {
+    font-weight: 700;
+    font-size: 4rem;
+  }
+  .timer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 3rem;
+    text-align: center;
+    backdrop-filter: blur(1px);
+    border-radius: 5px;
+  }
+  
