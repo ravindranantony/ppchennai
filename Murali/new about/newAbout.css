@@ -1,0 +1,139 @@
+/* font-family: 'Lato', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Syne', sans-serif; */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #f3f2ff;
+  /* background-color: #000; */
+  font-family: 'Lato', sans-serif;
+  font-size: 1.15rem;
+}
+tr {
+  line-height: 2.5;
+}
+@media (max-width: 30.2rem) {
+  tr {
+    line-height: 1.5;
+  }
+}
+h2{
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.text-heading {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.text-sub-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+/* .text-paragraph {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+} */
+
+
+header {
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: 3rem; */
+}
+section > div {
+  margin-bottom: 5rem;
+}
+
+.details{
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+.main-title{
+  min-width: 19rem;
+  background-color: white;
+  display: inline-block;
+  padding: 2rem;
+  box-shadow: 10px 10px 1px #000;
+}
+
+.mentor-img{
+  filter: drop-shadow(5px 0 10px rgba(000, 000, 000, .5));
+}
+.list-group-item,
+.card-title > h5 {
+  border: 0;
+}
+.list-group-item {
+  background-color: rgba(212, 212, 212, 0.5);
+}
+.card {
+  width: 15rem !important;
+  border: 0;
+  background-color: rgba(212, 212, 212, 0.5);
+  outline: 0;
+  transition: all 0.2s;
+}
+.card-img-top {
+  width: 12rem;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 0.25rem;
+}
+.card:hover {
+  transform: scale(1.03);
+}
+.list-group a {
+  transition: all 0.2s;
+}
+.list-group a:hover {
+  transform: scale(1.03);
+}
+
+
+.table-with-links tr td:last-child {
+  width: 10rem;
+}
+
+
+
+
+
+
+
+.b-top{
+  cursor: pointer;
+  background-color:black;
+  color: white;
+  padding: .2rem 1rem;
+  border-radius: 50%;
+  font-size:1.5rem;
+  position: fixed;
+  top:90% ;
+  left:95%;
+  transition: all .2s;
+}
+.b-top:hover{
+  transform: scale(1.1);
+}
+@media (max-width: 30.2rem) {
+  .b-top{
+    padding: .1rem .7rem;
+    font-size:1rem;
+    position: fixed;
+    top:90% ;
+    left:85%;
+  }
+}
