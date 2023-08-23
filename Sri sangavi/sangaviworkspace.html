@@ -14,6 +14,14 @@
       color: #fff;
       margin: 0;
   }
+  /* Add styles to make the header fixed */
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+
   .header{
     background-color: white;
     color: black;
@@ -25,36 +33,35 @@
   background-position: center;
   color: #fff;
 }
-
 .typing-effect {
-  text-align: center;
-  padding: 100px 0;
-  font-size: 24px;
+   text-align: center;
+   padding: 100px 0;
+   font-size: 24px;
 }
 
-.typing-effect p {
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: typing 4s steps(30) infinite, blink-caret 0.75s step-end infinite;
+.dynamic-text {
+   white-space: nowrap;
+   overflow: hidden;
+   width: 0;
+   animation: typing 4s steps(30) infinite, blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+   from {
+      width: 0;
+   }
+   to {
+      width: 100%;
+   }
 }
 
 @keyframes blink-caret {
-  from, to {
-    border-right-color: transparent;
-  }
-  50% {
-    border-right-color: white;
-  }
+   from, to {
+      border-right-color: transparent;
+   }
+   50% {
+      border-right-color: white;
+   }
 }
 
     section {
@@ -71,15 +78,56 @@
       text-align: center;
     }
 
-         Resume .profile-image {
-        float: right;
-        margin-right: 100px;
-        width: 700;
-        height: 700;
-      } 
+    .profile-image {
+  float: right;
+  margin-right: 100px;
+  width: 300px; /* Adjusted width */
+  height: 300px; /* Adjusted height */
+}
+
     .description {
       margin-top: 10px;
     }
+    .skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+}
+
+.skill-name {
+  flex: 1;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.skill-progress {
+  flex: 3;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: blue;
+  animation: progressAnimation 2s ease-in-out;
+}
+
+@keyframes progressAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 
     .link-container {
       display: inline-flex;
@@ -200,12 +248,12 @@
       </div>
     </div>
   </section>
+  <br>
+  <br>
   <script>
     // Text for the typing effect
     const text = "  ";
-    
-  
-    // Function to populate the typing effect
+       // Function to populate the typing effect
     function typeWriter(text, i, fnCallback) {
       if (i < text.length) {
         document.querySelector(".typing-effect p").textContent += text.charAt(i);
@@ -229,12 +277,15 @@
   <section id="about" class="about">
     <div class="background-image"></div>
     <div class="container">
-      <p><stront><b>I'm Sri sangavi</b></stront></p>
       <div class="typing-effect">
-        <p>
-        <strong><b>Front-end developer <br> UI/UX Designer</b></strong>
+        <p><b><strong>I'M Sri Sangavi</strong></b></p>
+        <br>
+        <br>
+        <p class="dynamic-text">
+           Front-end developer<br>UI/UX Designer
         </p>
-      </div>
+     </div>
+     
     </div>
   </section>
   
@@ -304,63 +355,42 @@
   </header>
      <section id="Resume">
       <div class="row">
-        <br>
-        <br>
-        <br>
-        <br>
         <div class="col-lg-4" data-aos="fade-right">
           <br>
           <br>
           <br>
           <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <img src="https://media.licdn.com/dms/image/D5603AQH9hRUGe5TOvA/profile-displayphoto-shrink_200_200/0/1692047332902?e=1697673600&v=beta&t=M2dn7jKiIivv7ArxHl2c0WtFRouOxlY7ih7BS1vfUz8" class="img-fluid" alt="">
+        
+          <img src="https://media.licdn.com/dms/image/D5603AQH9hRUGe5TOvA/profile-displayphoto-shrink_200_200/0/1692047332902?e=1697673600&v=beta&t=M2dn7jKiIivv7ArxHl2c0WtFRouOxlY7ih7BS1vfUz8" class="img-fluid profile-image" alt="">
         </div>
-    <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
 <h3><strong><b>UI/UX Designer &amp; Web Developer</b></strong></h3>
     <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
       <br>
       <p class="fst-italic">
          Personal Details 
-      </p>
-      <br>
-      <br>
-      <p class="description">
-        Hello! I am Sri Sangavi an aspiring IT professional, eager to make my mark in the dynamic and ever-expanding world of
-technology. I have recently graduated with a degree in IT, and I am excited to apply my knowledge, passion,
-and enthusiasm to contribute positively to the IT industry. With a strong foundation in various IT concepts
-and a willingness to learn, I am ready to take on new challenges and grow as a skilled professional.<br><strong>Front-end developer web/AI - Pepper Programming</strong><br><strong>BSc. Information Technology</strong>
-      </p>
-      <br>
-      <br>
-      <div class="row">
+          <br>
+            <div class="row">
         <div class="col-lg-6">
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <strong>Birthday :</strong> <span> 25 June 2000</span></li>
-            <li><i class="bi bi-chevron-right"></i> <strong>Degree   :</strong> <span>BSC(IT)</span></li>
-            <li><i class="bi bi-chevron-right"></i> <strong>Phone    :</strong> <span>9894366440</span></li>
-            <li><i class="bi bi-chevron-right"></i> <strong>City     :</strong> <span>salem</span></li>
+                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday :</strong> <span> 25 June 2000</span></li>
+                   <li><i class="bi bi-chevron-right"></i> <strong>Degree   :</strong> <span>BSC(IT)</span></li>
+                   <li><i class="bi bi-chevron-right"></i> <strong>Phone    :</strong> <span>9894366440</span></li>
+                   <li><i class="bi bi-chevron-right"></i> <strong>City     :</strong> <span>salem</span></li>
           </ul>
         </div>
         <div class="col-lg-6">
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <strong>Age     :</strong> <span>23</span></li>
-            <li><i class="bi bi-chevron-right"></i> <strong>Website :</strong> <span>https://vercel.com/dashboard</span></li>
-            <li><i class="bi bi-chevron-right"></i> <strong>Email   :</strong> <span>sangavi252000@gmail.com</span></li>
-            <li><i class="bi bi-chevron-right"></i> <strong>Freelance :</strong> <span>Available</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age     :</strong> <span>23</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website :</strong> <span>https://vercel.com/dashboard</span></li>
+                 <li><i class="bi bi-chevron-right"></i> <strong>Email   :</strong> <span>sangavi252000@gmail.com</span></li>
+                 <li><i class="bi bi-chevron-right"></i> <strong>Freelance :</strong> <span>Available</span></li>
           </ul>
         </div>
       </div>
       <p>
-        By working closely with designers, UX professionals, and back-end developers, I ensure seamless collaboration and successful integration throughout the development process.
-I am excited to tackle new challenges, create seamless user experiences, and contribute to building a digital world that engages and delights users.
+                 By working closely with designers, UX professionals, and back-end developers, I ensure seamless collaboration and successful integration throughout the development process.
+                 I am excited to tackle new challenges, create seamless user experiences, and contribute to building a digital world that engages and delights users.
       </p>
       <body>
         <section id="download" class="bg-blue py-5"> 
@@ -374,16 +404,117 @@ I am excited to tackle new challenges, create seamless user experiences, and con
 
 </div>
 </section>
+<script>
+  // Function to start the skill bar animations when the section is in the viewport
+  function startSkillAnimations() {
+    const skillBars = document.querySelectorAll('.skill-progress .progress');
+    skillBars.forEach((bar) => {
+      bar.style.width = bar.dataset.progress;
+    });
+  }
+
+  // Check if the skills section is in the viewport and start animations
+  function checkVisibility() {
+    const skillsSection = document.querySelector('#skills');
+    const sectionTop = skillsSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    if (sectionTop < windowHeight) {
+      startSkillAnimations();
+      window.removeEventListener('scroll', checkVisibility);
+    }
+  }
+
+  // Add an event listener to check visibility on scroll
+  window.addEventListener('scroll', checkVisibility);
+
+  // Trigger the visibility check initially
+  checkVisibility();
+</script>
+
+
 <section id="skills" class="skills section-bg">
   <div class="container" data-aos="fade-up">
-
     <div class="section-title">
       <h2>Skills</h2>
-      <p>As a Frontend Web Developer with knowledge of HTML, CSS, JavaScript tools like Figma, Canva, Adobe Express, Framer,ChatGPT,VSCode and GitHub. To use technical proficiency and creativity to develop
-engaging user experiences and advance in a professional career.</p>
+      <p>As a Frontend Web Developer with knowledge of HTML, CSS, JavaScript tools like Figma, Canva, Adobe Express, Framer,ChatGPT,VSCode and GitHub. To use technical proficiency and creativity to develop engaging user experiences and advance in a professional career.</p>
     </div>
-  <section id="Portfolio" class="bg-blue py-5">   <!-- Add background color for the project section -->
-    <div class="container">
+    <div class="skill-bars">
+      <div class="skill">
+        <div class="skill-name">HTML</div>
+        <div class="skill-progress">
+          <div class="progress" data-progress="90%"></div> 
+        </div>
+      </div>
+      <!-- Add more skills with the same structure -->
+      <div class="skill">
+        <div class="skill-name">CSS</div>
+        <div class="skill-progress">
+          <div class="progress" data-progress="85%" ></div>
+        </div>
+      </div>
+      <!-- Add more skills with the same structure -->
+      <div class="skill">
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-progress">
+          <div class="progress" data-progress="80%"></div>
+        </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Figma</div>
+          <div class="skill-progress">
+            <div class="progress" data-progress="75%"></div>
+          </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Canva</div>
+            <div class="skill-progress">
+              <div class="progress" data-progress="70%"></div>
+            </div>
+            </div>
+            <div class="skill">
+              <div class="skill-name">Adope Express</div>
+              <div class="skill-progress">
+                <div class="progress" data-progress="95%"></div>
+              </div>
+              </div>
+              <div class="skill">
+                <div class="skill-name">Framer</div>
+                <div class="skill-progress">
+                  <div class="progress" data-progress="60%"></div>
+                </div>
+                </div>
+                <div class="skill">
+                  <div class="skill-name">Chat Gpt</div>
+                  <div class="skill-progress">
+                    <div class="progress" data-progress="93%"></div>
+                  </div>
+                  </div>
+                  <div class="skill">
+                    <div class="skill-name">VS code</div>
+                    <div class="skill-progress">
+                      <div class="progress" data-progress="98%"></div>
+                    </div>
+                    </div>
+                    <div class="skill">
+                      <div class="skill-name">GitHub</div>
+                      <div class="skill-progress">
+                        <div class="progress" data-progress="96%"></div>
+                      </div>
+                      </div>
+                      <div class="skill">
+                        <div class="skill-name">API </div>
+                        <div class="skill-progress">
+                          <div class="progress" data-progress="78%"></div>
+                        </div>
+                        </div>
+                
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="portfolio" class="bg-blue py-5">   <!-- Add background color for the project section -->
+      <div class="container">
       <div class="name" text-align="center"><b><strong>Portfolio</b></strong></h2></div>
       <br>
       <div class="name" text-align="center"><b><strong>UI Project</b></strong></h2></div>
@@ -391,7 +522,7 @@ engaging user experiences and advance in a professional career.</p>
       <div class="row" id="portfolio-container">
         <div class="col-lg-4">
           <div class="project-image-container" onclick="openInNewTab('sangavi_calculator.html')">
-            <img src="https://th.bing.com/th/id/OIP.vDMDxD761dhu9sVhbnDUGAHaLf?w=126&h=196&c=7&r=0&o=5&pid=1.7" alt="Project 1" class="project-image">
+            <img src="https://th.bing.com/th/id/R.09f0246e086262bd47929f5fcf964076?rik=BSANrLwhmIxn%2bw&riu=http%3a%2f%2f21223.alserver7.com%2fuserfiles%2fimages%2fCalculator.png&ehk=8Zhk9cGUF4eFwj6LTKtTtNFNepU%2bQqjtu87d4%2bK2i7I%3d&risl=&pid=ImgRaw&r=0" alt="Project 1" class="project-image">
             <p class="project-name">Calculator</p>
           </div>
         </div>
@@ -403,13 +534,13 @@ engaging user experiences and advance in a professional career.</p>
         </div>
         <div class="col-lg-4">
           <div class="project-image-container" onclick="openInNewTab('sangavitictactoe.html')">
-            <img src="https://th.bing.com/th/id/OIP.z34ARszvRncdJMfoV5Lv3QHaHa?w=161&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 3" class="project-image">
+            <img src="https://thumbs.dreamstime.com/b/tic-tac-toe-puzzle-blue-background-93044760.jpg" alt="Project 3" class="project-image">
             <p class="project-name">Tic Tac Toe</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="project-image-container" onclick="openInNewTab('sangavi_2024.html')">
-            <img src="https://th.bing.com/th/id/OIP.fMrAKIzfokv7SqobTv1VOgAAAA?w=186&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 4" class="project-image">
+            <img src="https://thumbs.dreamstime.com/b/new-year-background-bokeh-light-letters-2024-wallpaper-neural-network-generated-art-267463871.jpg" alt="Project 4" class="project-image">
             <p class="project-name">New Year countdown</p>
           </div>
         </div>
@@ -421,8 +552,14 @@ engaging user experiences and advance in a professional career.</p>
         </div>
         <div class="col-lg-4">
           <div class="project-image-container" onclick="openInNewTab('https://newfrappybirdplayinggame.vercel.app/')">
-            <img src="https://th.bing.com/th/id/OIP.3GDF3LpiPyoe0XcBq1JT0QHaEJ?w=281&h=180&c=7&r=0&o=5&pid=1.7" alt="Project 4" class="project-image">
+            <img src="https://cdn.iphoneincanada.ca/wp-content/uploads/2014/02/fly-birdie.jpeg" alt="Project 4" class="project-image">
             <p class="project-name">Flappy_Avatar</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="project-image-container" onclick="openInNewTab('https://traveliii-five.vercel.app/')">
+            <img src="https://uploads-ssl.webflow.com/61805b3be4991235da5b36a6/61994678fe05724455914cd9_Viaggio%20Icon%20256%20x%20256.png" alt="Project 4" class="project-image">
+            <p class="project-name">Travel App</p>
           </div>
         </div>
       </div>
@@ -493,16 +630,18 @@ engaging user experiences and advance in a professional career.</p>
 
 </section>
 
-  <footer class="bg-purple text-white py-3">
-    <div class="container text-center">
-      <p>&copy; 2023 [Sri Sangavi]. All rights reserved.</p>
-    </div>
-  </footer>
+<footer class="bg-purple text-white py-3">
+  <div class="container text-center">
+    <p>&copy; 2023 [Sri Sangavi]. All rights reserved.</p>
+  </div>
+</footer>
 
-  <script>
-    function openInNewTab(url) {
-      window.open(url, "_blank");
-    }
-  </script>
+<script>
+  function openInNewTab(url) {
+    window.open(url, "_blank");
+  }
+</script>
 </body>
 </html>
+
+
