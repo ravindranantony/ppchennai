@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.weather-container {
+    
+    width: 50%;
+    max-width: 470px;
+    background:linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    margin: 50px auto 0;
+    border-radius: 10px;
+    padding: 2px 5px;
+    text-align: center;
+
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+input {
+    border: 50;
+    outline: 50;
+    background: #ebfffc;
+    color:#555;
+    padding:2px 5px;
+    height:60px;
+    border-radius:30px;
+    flex:1;
+    margin-right:16px;
+    font-size:18px;
+}
+
+button {
+    padding: 8px 20px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#weather-info {
+    margin-top: 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.weather-container {
+    
+    width: 50%;
+    max-width: 470px;
+    background:linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    margin: 50px auto 0;
+    border-radius: 10px;
+    padding: 2px 5px;
+    text-align: center;
+
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+input {
+    border: 50;
+    outline: 50;
+    background: #ebfffc;
+    color:#555;
+    padding:2px 5px;
+    height:60px;
+    border-radius:30px;
+    flex:1;
+    margin-right:16px;
+    font-size:18px;
+}
+
+button {
+    padding: 8px 20px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#weather-info {
+    margin-top: 20px;
+}
