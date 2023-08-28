@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Contact Me</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  .contact-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 800px;
+  }
+  .contact-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .contact-title {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+  }
+  .contact-subtitle {
+    font-size: 20px;
+    color: #777;
+    margin: 10px 0;
+  }
+  .contact-form {
+    margin-top: 30px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  textarea {
+    resize: vertical;
+  }
+  .btn-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  .address-section {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .address {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+  }
+  .social-links {
+    margin-top: 20px;
+  }
+  .social-icon {
+    font-size: 24px;
+    color: #333;
+    margin: 0 10px;
+    transition: color 0.3s;
+  }
+  .social-icon:hover {
+    color: #007bff;
+  }
+</style>
+</head>
+<body>
+<div class="contact-section">
+  <div class="contact-header">
+    <h1 class="contact-title">Get in Touch</h1>
+    <p class="contact-subtitle">Feel free to reach out to me for any inquiries or just to say hello!</p>
+  </div>
+  <div class="contact-form">
+    <form>
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="text" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <div class="btn-container">
+        <button class="btn" type="submit">Send Message</button>
+      </div>
+    </form>
+  </div>
+  <div class="address-section">
+    <p class="address">Leischendam,Netherlands</p>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/arthisivakumar19/?igshid=MzNlNGNkZWQ4Mg%3D%3D"><img src="Images/insta.jpg" alt="Instagram"></a>
+        <a href="https://github.com/Arthi-650"><img src="Images/Github.jpg" alt="GitHub"></a>
+        <a href="https://www.linkedin.com/in/arthi-sivakumar19/"><img src="Images/linkedin.jpg" alt="LinkedIn"></a>
+        <a href="https://twitter.com/Aarthi13515468?t=0eAds6JxuPzp8v2Cu0ZOgw&s=08"><img src="Images/twitter.jpg" alt="Twitter"></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
