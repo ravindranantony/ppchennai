@@ -1,60 +1,45 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Year 2024 Count down</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" 
-     rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap"
+            rel="stylesheet">
+        <title>Newyear Countdown</title>
+		<br>
+		<br>
+        <link rel="stylesheet" href="newyear.css">
+    </head>
+    <body>
 
-     <link rel="stylesheet" type="text/css" href="countdown.css">
-</head>
-<body>
-    <canvas id="canvas"></canvas>
-    <div class="content-wrapper">
-            <h1>Happy New Year</h1><br>
-<p style="font-size:48px">
-&#128512;</p>
-          <h1 class="year" id="new-year">2024</h1>
-                <div class="timer">
-            <div class="timer-box">
-                <div class="timer-box__count">
-                    <span id="days">0</span>
-                </div>
-                <div class="timer-box__text">Days</div>
+        <div class="container">
+            <h1 class="title">Countdown To Newyear 2024</h1>
+        
+
+        <div class="timer">
+            <div class="countdown">
+                <div class="days">100</div>
+                <span class="text">Days</span>
             </div>
-
-            <div class="timer-box">
-                <div class="timer-box__count">
-                    <span id="hours">0</span>
-                </div>
-                <div class="timer-box__text">Hours</div>
+            <div class="countdown">
+                <div class="hours">100</div>
+                <span class="text">Hours</span>
             </div>
-
-            <div class="timer-box">
-                <div class="timer-box__count">
-                    <span id="minutes">0</span>
-                </div>
-                <div class="timer-box__text">Minutes</div>
+            <div class="countdown">
+                <div class="minutes">100</div>
+                <span class="text">Minutes</span>
             </div>
-
-            <div class="timer-box">
-                <div class="timer-box__count">
-                    <span id="seconds">0</span>
-                </div>
-                <div class="timer-box__text">Seconds</div>
+            <div class="countdown">
+                <div class="seconds">100</div>
+                <span class="text">Seconds</span>
             </div>
-
         </div>
-
     </div>
-    
-    <script src="\Lakshmi\background.js"></script>
-    <script src="\Lakshmi\firework.js"></script>
-
-</body>
+    <script src="newyear.js"></script>
+        <script src="snowstorm-min.js"></script>
+    </body>
 </html>

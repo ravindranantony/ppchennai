@@ -1,0 +1,101 @@
+/* Reset some default styling */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #030303;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(249, 242, 242);
+}
+
+.content {
+    width: 80%;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+article {
+    margin-bottom: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: white;Images/background image.jpeg
+}
+body {
+    background-image: url('Images/Background_image.avif');
+    background-size: cover; /* Adjust the sizing to cover the entire body */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    /* You can also add background color in case the image is transparent or takes time to load */
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+/* Your other styles */
+.projects-section {
+    /* ... */
+  }
+  
+  .projects-title {
+    /* ... */
+  }
+  
+  .project-filters {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-button {
+    display: inline-block;
+    padding: 6px 15px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .filter-button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .project-cards {
+    /* ... */
+  }
+  
+  .project-card {
+    /* ... */
+  }
+  
+  .ui,
+  .ux {
+    display: none;
+  }
+  

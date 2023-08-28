@@ -1,214 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
-
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
-
-.button:hover {
-  background-color: #555;
-}
-
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
-</style></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>My Blog</title>
+</head>
 <body>
-
-<div class="about-section">
-  <h1>ARTHI SIVAKUMAR</h1>
-  <p> Hello, I am Arthi and I am a Full Stack Developer specialized in Web and AI technologies. I completed my Computer
-      Science Engineering. Currently I am learning dutch language now. This is my first opportunity to build my career. To get an opportunity where
-      I can make the best of my potential and contribute to the organization's
-      growth..</p>
-      <center><img
-          src="https://media.licdn.com/dms/image/D4E03AQHGMFnKSDe35A/profile-displayphoto-shrink_800_800/0/1689272119340?e=1694649600&v=beta&t=6Hlw9UR6eBbLyNJwCWiMU8qaHgrl-7Ch9HpPDO5hVqE"
-          alt="Profile Photo"></center>
-</div>
+    <header>
+        <h1>Welcome to My Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="Arthi.html">HOME</a></li>
+                <li><a href="skill.html">SKILLS</a></li>
+                <li><a href="resume.html">RESUME</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
     
-          <h1>MY PROJECTS</h1>
-          <ol>
-            <li><a href="Arthi_calander.html" class="button">Calculator</a></li>
-            <li><a href="Arthi_fibonacci.html" class="button">Fibonacci Series</a></li>
-            <li><a href="Arthi_tic_tac_toe.html" class="button">TicTacToe Game</a></li>
-            <li><a href="Newyear_Countdown\Newyear.html" class="button">Newyear Countdown</a></li>
-           </ol> <!-- contact section-->
-    <section id="contact">
-        <div class="container mt-3 contactContent">
-            <h1 class="text-center">Contact Me</h1>
-            <div class="row mt-4">
-                <div class="col-lg-6">
-                    
-                    </style>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="my-details">
-                        <p> ARTHI SIVAKUMAR <br /></p>
-                        <p> (+31)681137783<br /></p>
-                        <p>arthisivakumar19@gmail.com@gmail.com<br /></p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-           
-     
-<div class="name"><h1 style="background-color:powderblue;">Follow Me</h1></div>
-<!-- Add icon library -->
-<br>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Add font awesome icons -->
-<center>
-<a href="https://www.linkedin.com/in/arthi-sivakumar19/" target="_blank" class="fa fa-linkedin"></a>
-<a href="https://twitter.com/Aarthi13515468?t=0eAds6JxuPzp8v2Cu0ZOgw&s=08" target="_blank" class="fa fa-twitter"></a>
-<a href="https://www.instagram.com/arthisivakumar19/?igshid=MzNlNGNkZWQ4Mg%3D%3D"target="_blank" class="fa fa-instagram"></a>  
-<div class="name"><h5 style="background-color:black;color:white;">&copy; 2023 [Arthi]. All rights reserved.</h5></div>     
-    </div>
-  </footer>
+    <section class="content">
+        <article>
+            <h2>ARTHI SIVAKUMAR</h2>
+            <p>Front End Web Developer <span>(Web/AI)</span></p>
+            <center><img src="Images/Arthi_pic.jpg" width="250" height="300">
+            </center>
+    </header>
+    
+    <main>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p> Hello, I am Arthi and I am a Full Stack Developer specialized in Web and AI technologies. I completed my Computer
+                Science Engineering.I am a web developer and I love to create websites. I am a very good developer and I am always looking for new projects. 
+                Currently I am learning dutch language now. This is my first opportunity to build my career. To get an opportunity where
+                I can make the best of my potential and contribute to the organization's
+                growth.</p>
+          </section>
+          <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Email: arthisivakumar19@gmail.com</p>
+            <p>Phone: (+31)681137783</p>
+            <p>Website:https://ppchennai.vercel.app/Arthi/Arthi.html</p>
+          <title>My Website</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  .social-icons {
+    margin-top: 10px;
+  }
+  .social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.3s;
+  }
+  .social-icons a:hover {
+    color: #007bff;
+  }
+</style>
+</head>
+<body>
+<div class="footer">
+  <p>&copy; [Arthi]2023 My Website. All rights reserved.</p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/profile.php?id=100008425487948"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com/Aarthi13515468?t=0eAds6JxuPzp8v2Cu0ZOgw&s=08"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/arthisivakumar19/?igshid=MzNlNGNkZWQ4Mg%3D%3D"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/arthi-sivakumar19/"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/Arthi-650" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+  </div>
+</div>
+ 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
